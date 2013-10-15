@@ -1,24 +1,24 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Edit bpython session in an external editor"
 date:   2013-10-14 11:12:17
-categories: jekyll update
+categories: bpython python
 ---
 
-You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
-To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.
+I'm working on an alternative frontend for bpython - it's installable with
+`pip install hg+http://hg.bitbucket.org/thomasballinger/bpython@scroll-frontend`,
+and called `bpython-scroll`.
 
-Jekyll also offers powerful support for code snippets:
+Having rewriten so much of the code, there's very low overhead for me to add new
+features, and today I added an option to edit the current REPL session in an
+external editor. I've already used the feature a ton today while answering questions
+Hacker Schoolers had reading the excellent
+[Python Essential Reference](http://www.amazon.com/Python-Essential-Reference-4th-Edition/dp/0672329786).
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+Editing session history works like the bpython rewind feature - after editing, it's just
+running the commands in your history again (though in my version this happens
+in a new interpreter session), so environment affecting things like file io
+and network connections don't do well with this strategy.
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
-
-[jekyll-gh]: https://github.com/mojombo/jekyll
-[jekyll]:    http://jekyllrb.com
+I also fixed history persistance, and to handle this new
+"edit session in editor" mode it's being added again.
