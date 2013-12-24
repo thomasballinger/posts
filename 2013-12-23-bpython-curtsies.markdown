@@ -60,7 +60,7 @@ Until it's merged, I'm using a [separate tracker](https://bitbucket.org/thomasba
 Also try grepping for `#TODO` in the source. I'm ballingt in #bpython, and
 always particularly happy to talk about what's wrong with my code :)
 
-If I were to write another repl, I might just write it from scratch, but it's exciting that
+If I were to write another REPL, I might just write it from scratch, but it's exciting that
 my work might be used by the existing bpython user base, and the framework
 provided by the existing code and feature set was
 helpful in structuring and scoping the project.
