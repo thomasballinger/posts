@@ -2,7 +2,6 @@
 layout: post
 title:  "Native scrolling in bpython: bpython-curtsies"
 date:   2013-12-21 11:12:17
-categories: bpython python
 ---
 
 I've mostly finished up work on an alternative frontend for bpython - it's installable with
@@ -40,7 +39,7 @@ some Hacker Schoolers had reading the excellent
 
 Sam Aaron, creator of Overtone and Emacs Live, advocated building one's own tools in a [talk I listened to](http://www.infoq.com/presentations/Live-Programming) the other day.
 I'm referencing him mostly because I wanted to use this section title.
-As he suggests it might, I've found using a tool I created daily rewarding and powerful.
+As he suggests, I've found using a tool I created daily rewarding and powerful.
 I've added other features on a whim that aren't in the current pull request:
 
 * vim-style abbreviations: `improt` -> `import`
