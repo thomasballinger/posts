@@ -4,11 +4,11 @@ title:  "Native scrolling in bpython: bpython-curtsies"
 date:   2013-12-21 11:12:17
 ---
 
-I've mostly finished up work on an alternative frontend for bpython - it's installable with
-`pip install hg+http://hg.bitbucket.org/thomasballinger/bpython@curtsies
-greenlet curtsies`,
-and called `bpython-curtsies`. I'm still waiting on bpython folks to see if it
-can be merged, but it's useful to me now, and might be to others as well.
+I've mostly finished up work on an alternative frontend for bpython - it's
+installable with (updated) `pip install hg+http://hg.bitbucket.org/bobf/bpython@default greenlet curtsies`
+and called `bpython-curtsies`. The code is in bpython master, but there hasn't
+been a release since it was merged, so you can't `pip install bpython` to get
+it just yet.
 
 `bpython-curtsies` is bpython with native terminal scrolling:
 
@@ -56,9 +56,11 @@ useful to me.
 Contribute!
 -----------
 
-Until it's merged, I'm using a [separate tracker](https://bitbucket.org/thomasballinger/bpython/issues?status=new&status=open).
-Also try grepping for `#TODO` in the source. I'm ballingt in #bpython, and
-always particularly happy to talk about what's wrong with my code :)
+Update: It's merged! Just grab the lastest bpython from
+[https://bitbucket.org/bobf/bpython](https://bitbucket.org/bobf/bpython) to
+see it in action! There's plenty of work to be done though, see the main
+[bpython issue
+tracker](https://bitbucket.org/bobf/bpython/issues?status=new&status=open).
 
 If I were to write another REPL, I might just write it from scratch, but it's exciting that
 my work might be used by the existing bpython user base, and the framework
