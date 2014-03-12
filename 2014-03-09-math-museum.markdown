@@ -19,7 +19,7 @@ but it certainly did a terrific job of divorcing math from arithmetic, algebra
 and calculus, an important and worthwhile task.
 
 I couldn't help thinking of how much more I liked the MathWorks-sponsored
-Math exhibit at the Boston Science museum - it presented neat ideas with more
+math exhibit at the Boston Science museum - it presented neat ideas with more
 context, but was less interactive. But I think I was wrong about this - I
 don't remember any specific new ideas I left that exhibit with, beside feeling
 like I should do more math.
@@ -28,17 +28,17 @@ It also occurred to me that your annual ITP show might be neater too, for its
 interdisciplinary "everything is awesome" approach, but the average
 educational quality for me of each exhibit was much higher.
 
-Unfortunately there's a lot of ham-fisted teaching going on: I observed and
+Unfortunately there was a lot of ham-fisted teaching going on: I observed and
 experienced museum staff (probably mostly volunteers, all well-meaning)
 spouting lectures as though there were reading an interpretive sign.
-The advantage of a real person is that you can truly engage and teach instead
+The advantage of a real person over a sign that you can truly engage and teach instead
 of lecture, and let the museum-goer drive the experience - but perhaps there's
 no time for us to develop the relationship required for real learning.
 
 The element of "bring your kids here so they'll grow up to be smart," which
 I'm sure permeates most museums, seemed particularly strong at MoMath.
 This made it particularly disappointing that while the museum essentially
-has free math tutors, they unfortunately mostly weren't very good.
+has free math tutors, they mostly weren't very good.
 
 Some neat ideas from the museum:
 --------------------------------
@@ -70,3 +70,5 @@ Some neat ideas from the museum:
 * Fractal Tree - a really intuitive description of a fractal: take a picture
   of yourself, overlay it on your arms. Overlay each of those overlays' arms
   with yourself again, etc.
+
+  ![fractal tree]({{ site.url }}/assets/fractaltree.jpg)

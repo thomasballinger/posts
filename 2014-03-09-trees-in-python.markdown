@@ -36,7 +36,7 @@ thing starts to depend on its children trees.
 Python does have some pain points for recursive data structures - the
 inevitable `if empty` / `if self.left_child is None` constructions kept
 popping up, taunting me that I wasn't using a language that actually
-understood the different cases my data structures, instead interpreting
+understood the different cases of my data structures, instead interpreting
 every object as a bag of attributes I had to write custom code for.
 
 Finally, tree transformations are nice! I wrote cleaner programs by building a
