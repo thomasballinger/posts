@@ -66,8 +66,9 @@ Thanks for reading
 What else can we say about both JavaScript and Python? Thanks to
 several folks at [Hacker School](https://www.hackerschool.com/) for help.
 
-[^1]: Python calls them attributes, and uses "property" to describe a specific
-    kind of attribute.
+[^1]: Python calls them attributes, and uses
+    "[property](http://docs.python.org/2.7/library/functions.html#property)" to describe a
+    [specific kind of attribute](http://blaag.haard.se/What-s-the-point-of-properties-in-Python/).
 
 [^2]: Python has classes, which means that non-class objects aren't allowed to be
     in the hierarchy of objects that attributes are looked up on. The
@@ -83,14 +84,14 @@ several folks at [Hacker School](https://www.hackerschool.com/) for help.
     keyword.
 
 [^object]: This is the biggest lie in the post. If you swallow it, you'll be
-    alright with the other ones in the post.
+    alright with the other ones.
     If this assertion offends you terrifically, you probably won't like this post.
     (or perhaps you'll enjoy nitpicking it :)
     If you can kind of see how that could be true, since most primitive types get
     automatically wrapped as their corresponding objects pretty seamlessly when
     you call methods on them, you might be able to keep reading.
-    Please also ignore null and undefined are also objects, whose existance
-    makes really derails this post.
+    Please also ignore null and undefined are also objects, the existance of
+    which really makes this assertion worse.
     If this is new and intriguing, I found [this](http://javascriptweblog.wordpress.com/2010/09/27/the-secret-life-of-javascript-primitives/) a good intro to JavaScript primitives.
     What I'll continue to call objects in this posts are really objects plus
     JavaScript primitives.
@@ -137,7 +138,8 @@ several folks at [Hacker School](https://www.hackerschool.com/) for help.
 
 [^configurable]: Not true, because in JavaScript, setters and getters can be established for
     properties via [configurable properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
-    so getting or setting an attribute could run arbitrary code
+    so getting or setting an attribute could run arbitrary code that _could_
+    modify a property higher up on the prototype chain.
 
 [^desirable]: JavaScript is often written in a such a way that functions use
     local scope to provide access to variables specific to an object
