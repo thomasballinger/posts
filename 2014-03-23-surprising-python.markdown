@@ -9,11 +9,11 @@ I'll present one with some background, then list a few others.
 
 --------------
 
-Ever since [Kristen Widman built](http://www.kristenwidman.com/blog/how-to-write-a-bittorrent-client-part-1/]) a [bittorrent](http://www.bittorrent.org/beps/bep_0003.html) [client](https://wiki.theory.org/BitTorrentSpecification)
-at Hacker School last year, building one from scratch has been a popular project.[^1]
+Ever since [Kristen Widman built](http://www.kristenwidman.com/blog/how-to-write-a-bittorrent-client-part-1/) a [bittorrent](http://www.bittorrent.org/beps/bep_0003.html) [client](https://wiki.theory.org/BitTorrentSpecification)
+at Hacker School last year, building one from scratch has been a popular project here.[^1]
 
-A few months ago a friend was having fun with the parser section of the
-project, decoding a torrent file. Torrent files are
+A few months ago my friend Joe Wilner was having fun with the parser section of the
+project, decoding a `.torrent` file. Torrent files are
 [bencoded](http://en.wikipedia.org/wiki/Bencode), so the goal was to
 do something like this:
 
@@ -26,7 +26,7 @@ involves code like the following:
 
     def consume_dict(s):
         d = {}
-        while s[0] != 'e':
+        while s.next() != 'e':
             d[consume_string(s)] = consume_something(s)
         return d
 
@@ -37,11 +37,11 @@ consumes characters off the same iterator `s` that `consume_something`
 (which dispatches to something else and may return a
 dictionary, string, int, list) uses.
 
-He could figure out why the code above was broken, until he discovered
+We couldn't figure out why the code above was broken, until he discovered
 
     def consume_dict(s):
         d = {}
-        while s[0] != 'e':
+        while s.next() != 'e':
             d.__setitem__(consume_string(s), consume_something(s))
         return d
 
@@ -51,12 +51,11 @@ worked fine.
 
 The lesson was that syntax effects the order of execution
 in python dictionary assignment:
-`d[second] = first`, but `d.__setitem__(first, second)`
+`d[second] = first`, but `d.__setitem__(first, second)`.
 
 This is behavior that's
 [well specified](http://docs.python.org/2/reference/simple_stmts.html#index-10),
 but knowledge of which perhaps shouldn't be taken for granted.
-When reading the code it's too easy to read statement from left to right.
 Like the gain in concision of dropping the parentheses in the expression
 `(a and b) or (c and d)`, maybe it's not worth the loss of clarity.
 
@@ -86,20 +85,6 @@ to suggest you'll need to spend the weekend reading blog posts to
 understand the code in front of you. What it really means is not doing whatever
 empirically most surprises people.
 
-------------
-
-If you come from
-[Python, JavaScript](http://ballingt.com/2014/03/17/python-javascript.html),
-or Ruby, this shouldn't surprise you.
-
-    for i, x in enumerate(elements):
-        if what_we_are_looking_for(x):
-            break
-    print i, x
-
-If it's hard to imagine how this is surprising, know that some languages have scopes more granular
-than function scope; imagine getting a new local scope every time you indented.
-
 -----------
 
 From Reid Barton's [Python quiz](http://web.archive.org/web/20101009122154/http://web.mit.edu/rwbarton/www/python.html):
@@ -114,6 +99,20 @@ From Reid Barton's [Python quiz](http://web.archive.org/web/20101009122154/http:
 Thanks Greg Price for pointing this one out to me. A careful reading of
 [the spec](http://docs.python.org/2/reference/expressions.html#generator-expressions)[^2]
 yields the answer.
+
+------------
+
+If you come from
+[Python, JavaScript](http://ballingt.com/2014/03/17/python-javascript.html),
+or Ruby, this shouldn't surprise you.
+
+    for i, x in enumerate(elements):
+        if what_we_are_looking_for(x):
+            break
+    print i, x
+
+If it's hard to imagine how this is surprising, know that some languages have scopes more granular
+than function scope; imagine getting a new local scope every time you indented.
 
 ------------
 
@@ -178,17 +177,19 @@ first class functions mix in interesting ways:
     >>> foo()
     [1, 1]
 
-I try to use one of
-
-    def foo(x=tuple([])):
-        ...
+I try to use
 
     def foo(x=None):
         if x is None:
             x = []
         ...
 
-instead, or
+instead,
+
+    def foo(x=tuple(some_list)):
+        ...
+
+if I didn't really need a list in the first place, and
 
     def foo():
         foo.cache.append(1)
@@ -196,7 +197,6 @@ instead, or
     foo.cache = []
 
 if I really want a function with state[^4].
-
 
 ------------
 
