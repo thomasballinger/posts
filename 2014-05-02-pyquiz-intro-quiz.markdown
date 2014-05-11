@@ -37,6 +37,6 @@ to do so!
 I'd like to create more quizzes that make the "Python is deeper than you think"
 point more strongly,
 improve the [quiz-writing DSL](https://github.com/thomasballinger/pythonquiz)
-(`pip install pyquiz`) I wrote to write the quiz, and make
+I wrote to write the quiz, and make
 the quiz output much nicer, but wanted
 to share this now in case I don't get around to those things for a while.
