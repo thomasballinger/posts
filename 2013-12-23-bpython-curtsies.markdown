@@ -5,10 +5,8 @@ date:   2013-12-21 11:12:17
 ---
 
 I've mostly finished up work on an alternative frontend for bpython - it's
-installable with (updated) `pip install hg+http://hg.bitbucket.org/bobf/bpython@default greenlet curtsies`
-and called `bpython-curtsies`. The code is in bpython master, but there hasn't
-been a release since it was merged, so you can't `pip install bpython` to get
-it just yet.
+installable with (updated) `pip install bpython[curtsies]`
+and called `bpython-curtsies`.
 
 `bpython-curtsies` is bpython with native terminal scrolling:
 
@@ -35,7 +33,7 @@ Having rewriten so much of the code, there's very low overhead for me to add new
 features. A few weeks ago I added the ability to edit the current REPL session in an
 external editor, and used the feature a ton that day while answering questions
 some Hacker Schoolers had reading the excellent
-[Python Essential Reference](http://www.amazon.com/Python-Essential-Reference-4th-Edition/dp/0672329786).
+[Python Essential Reference](http://www.amazon.com/Python-Essential-Reference-4th-Edition/dp/0672329786)[^1].
 
 Sam Aaron, creator of Overtone and Emacs Live, advocated building one's own tools in a [talk I listened to](http://www.infoq.com/presentations/Live-Programming) the other day.
 I'm referencing him mostly because I wanted to use this section title.
@@ -57,8 +55,8 @@ Contribute!
 -----------
 
 Update: It's merged! Just grab the lastest bpython from
-[https://bitbucket.org/bobf/bpython](https://bitbucket.org/bobf/bpython) to
-see it in action! There's plenty of work to be done though, see the main
+[https://bitbucket.org/bobf/bpython](https://bitbucket.org/bobf/bpython)
+to start hacking! There's plenty of work to be done though, see the main
 [bpython issue
 tracker](https://bitbucket.org/bobf/bpython/issues?status=new&status=open).
 
@@ -66,3 +64,6 @@ If I were to write another REPL, I might just write it from scratch, but it's ex
 my work might be used by the existing bpython user base, and the framework
 provided by the existing code and feature set was
 helpful in structuring and scoping the project.
+
+[^1]: By the way, I've written [a little quiz]({% post_url 2014-05-02-pyquiz-intro-quiz %})
+    that acts as an advertisement for Python Essential Reference.
