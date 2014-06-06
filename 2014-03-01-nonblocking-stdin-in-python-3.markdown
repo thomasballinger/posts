@@ -17,7 +17,7 @@ would solve the problem, and I wasn't surprised when they all passed.
 The fiddly string manipulation bits of curtsies are
 well tested, but terminal interaction and stream reading aren't at all.
 
-Here's my minimal example of a nonblocking read of stdin in Python 3:
+Here's my minimal example of a nonblocking read of stdin in Python 2:
 (this is worse than this [effbot](http://effbot.org/pyfaq/how-do-i-get-a-single-keypress-at-a-time.htm) example (which
 helpfully pointed me to fcntl when I originally wrote the code) because it
 doesn't use a select, but I've
