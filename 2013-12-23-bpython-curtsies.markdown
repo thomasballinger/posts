@@ -55,10 +55,10 @@ Contribute!
 -----------
 
 Update: It's merged! Just grab the lastest bpython from
-[https://bitbucket.org/bobf/bpython](https://bitbucket.org/bobf/bpython)
+[github.com/bpython/bpython](https://github.com/bpython/bpython)
 to start hacking! There's plenty of work to be done though, see the main
 [bpython issue
-tracker](https://bitbucket.org/bobf/bpython/issues?status=new&status=open).
+tracker](https://github.com/bpython/bpython/issues).
 
 If I were to write another REPL, I might just write it from scratch, but it's exciting that
 my work might be used by the existing bpython user base, and the framework
