@@ -217,9 +217,9 @@ if I really want a function with state[^4].
     check out [Ned Batchelder's terrific post on names in Python](http://nedbatchelder.com/text/names.html) for why mutability isn't the point.
 
 [^5]: Bram's code also doesn't rely on the side effect
-    of iterating on the iterator,
-    but intsead passes around an index - this more explicit
-    technique also helps makes it clear which read is occurring first.
+    of iterating on a shared iterator,
+    but instead passes around an index - this more explicit
+    technique also helps make it clear which read is occurring first.
 
 [^2]: Something I'd like to get better at: I usually go straight to the source to
     see what's happening in these cases, when a trip to the spec might be

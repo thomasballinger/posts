@@ -31,14 +31,14 @@ educational quality for me of each exhibit was much higher at the Math Museum.
 
 Unfortunately there was a lot of ham-fisted teaching going on: I observed and
 directly experienced museum staff (probably mostly volunteers, all well-meaning)
-spouting lectures as though there were reading an interpretive sign.
+spouting lectures as though they were reading an interpretive sign.
 The advantage of a real person over a sign that you can truly engage and teach instead
 of lecture, and let the museum-goer drive the experience - but perhaps there's
 no time for us to develop the sorts of relationship required for that kind of
 learning. The element of "bring your kids here so they'll grow up to be smart," which
 I'm sure permeates most museums, seemed particularly strong at MoMath.
 This made it particularly disappointing that while the museum essentially
-has free math tutors, they mostly weren't very good.
+has free math tutors, I felt they were ineffective.
 
 Some neat ideas from the museum:
 --------------------------------

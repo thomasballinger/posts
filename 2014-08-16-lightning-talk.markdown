@@ -55,11 +55,15 @@ to be able to use it)
     this wasn't really fair, and I didn't back it up at all. 
     What I meant was that `%run`, one way to reload modules in IPython,
     loads the modules globals into the local
-    namespace, which is a little scary: if you've changed the globals used in
+    namespace, which is a little scary: if you've deleted globals in
     the module, you'll have the old ones still around. There are also problems
     with a normal `reload(module)` command: objects
     you've already imported with `from module import thing` syntax
     won't be reloaded, and recursive reloads are an issue: reloading
     a module doesn't reload the modules it imported (IPython has
     [something](http://ipython.org/ipython-doc/dev/interactive/reference.html#dreload)
-    for this).
+    for this). Edit: It turns out
+    [autoreloading](http://ipython.org/ipython-doc/dev/config/extensions/autoreload.html)
+    in IPython is pretty awesome, and fixes many cases of the
+    `from module import func` or `from module import class` problems - thought
+    constants like `from module import MAX_LENGTH` is still a problem.
