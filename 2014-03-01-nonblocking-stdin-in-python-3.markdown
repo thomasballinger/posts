@@ -3,6 +3,7 @@ layout: post
 title:  "Nonblocking stdin read works differently in Python 3"
 date:   2014-03-01 23:10:00
 alias:  /2014/03/01/nonblocking-stdin-in-python-3.html
+tags: python terminals
 ---
 
 I added better paste support to

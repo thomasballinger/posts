@@ -3,6 +3,7 @@ layout: post
 title:  "Native scrolling in bpython: bpython-curtsies"
 date:   2013-12-21 11:12:17
 alias:  /2013/12/21/bpython-curtsies.html
+tags: bpython
 ---
 
 I've mostly finished up work on an alternative frontend for bpython - it's

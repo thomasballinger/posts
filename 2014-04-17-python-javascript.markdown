@@ -3,6 +3,7 @@ layout: post
 title:  "Python and JavaScript"
 date:   2014-3-17 10:00:00
 alias:  2014/03/17/python-javascript.html
+tags: python javascript
 ---
 
 One late night at Hacker School a few months ago, I had the chance to

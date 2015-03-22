@@ -3,6 +3,7 @@ layout: post
 title:  "Writing Curtsies Docs"
 date:   2014-11-22 15:30:00
 alias:  /2014/11/22/writing-curtsies-docs.html
+tags: temrinal
 ---
 
 I finally bit the bullet and wrote [documentation for

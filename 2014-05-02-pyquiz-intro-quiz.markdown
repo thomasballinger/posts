@@ -3,6 +3,7 @@ layout: post
 title:  "Python Essential Reference Tutorial Quiz"
 date:   2014-05-02 11:12:17
 alias:  /2014/05/02/pyquiz-intro-quiz.html
+tags: python
 ---
 
 Sometimes Python serves as a convenient lingua franca:

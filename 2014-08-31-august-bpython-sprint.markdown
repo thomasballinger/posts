@@ -3,6 +3,7 @@ layout: post
 title:  "August bpython sprint"
 date:   2014-08-31 18:35:00
 alias:  /2014/08/31/august-bpython-sprint.html
+tags: bpython
 ---
 
 I just took a vacation for a week! I spend time with my family in Washington

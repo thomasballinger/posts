@@ -3,6 +3,7 @@ layout: post
 title:  "Comparing key detection code in Blessed and Curtsies"
 date:   2014-11-29 16:05:00
 alias:  /2014/11/29/key-detection-code.html
+tags: terminal
 ---
 
 [lmontopo](http://lmontopo.github.io/) and I recently contributed

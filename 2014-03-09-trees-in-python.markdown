@@ -3,6 +3,7 @@ layout: post
 title:  "Trees in Python"
 date:   2014-03-09 11:12:17
 alias:  /2014/03/09/trees-in-python.html
+tags: python
 ---
 
 This week I wrote a lot of trees:

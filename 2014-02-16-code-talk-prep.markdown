@@ -3,6 +3,7 @@ layout: post
 title:  "Prepping for a Python talk with code snippets"
 date:   2014-02-16 11:12:17
 alias:  /2014/02/16/code-talk-prep.html
+tags: hacker-school python bpython
 ---
 
 After not making much progress on bpython for a while, someone in #bpython
