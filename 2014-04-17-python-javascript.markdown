@@ -11,13 +11,13 @@ Will thought that seemed odd, which made me want to examine it further.
 
 Let me tell you about my favorite dynamically typed language.
 
-JavaScript|Python
+JavaScript∪Python
 -----------------
 
 In this language, everything is an object.[^object]
 
 Objects are buckets of properties;[^1] they're mappings of names to
-other objects[^same]. 
+other objects.[^same]
 These properties can be accessed with dot notation - that is,
 the name `bar` can be accessed on the object `foo` with `foo.bar`.[^namespaces]
 
@@ -45,7 +45,7 @@ call it, its behavior is specific to that object.[^5]
 
 Variables are references to objects, and are not constrained in the type of
 object to which they can refer in any way. The only scope barriers are functions.[^barriers]
-(not bodies of for loops, brackets, indentation, etc.)
+(Bodies of for loops, brackets, indentation, etc. do not provide new scopes.)
 A variable name may refer to a local variable or
 a variable in a scope surrounding where the function was defined.
 
@@ -77,7 +77,7 @@ several folks at [Hacker School](https://www.hackerschool.com/) for help.
     then the objects's class object, then the class objects that class
     inherits from.
 
-    In JavaScript, the heirarchy is simpler: property lookup proceeds to an
+    In JavaScript, the hierarchy is simpler: property lookup proceeds to an
     objects "prototype", and then on to that prototype's prototype, and so on.
     Prototypes are determined by the value of value of the `.prototype`
     property of the function that constructed the object via the `new`
