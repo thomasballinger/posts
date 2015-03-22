@@ -2,6 +2,7 @@
 layout: post
 title:  "Python Prompt Toolkit impressions"
 date:   2014-09-30 22:00:00
+alias:  /2014/09/30/prompt-toolkit.html
 ---
 
 Last night I discovered Jonathan Slenders' [Python Terminal Toolkit](https://github.com/jonathanslenders/python-prompt-toolkit): a fancy interface to

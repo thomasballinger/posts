@@ -2,7 +2,7 @@
 layout: post
 title:  "bpython curtsies is live!"
 date:   2014-05-13 09:20:17
-alias: /2014/05/13/bpython-progress-update.html
+alias: [/2014/05/13/bpython-progress-update.html /2014/05/13/bpython-curtsies-release.html]
 ---
 bpython 0.13 has [just been released](https://groups.google.com/forum/#!topic/bpython/jtvr4l1Snkc)
 and it includes bpython-curtsies, the bpython

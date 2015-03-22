@@ -2,6 +2,7 @@
 layout: post
 title:  "Surprising Python"
 date:   2014-03-23 21:39:00
+alias:  /2014/03/23/surprising-python.html
 ---
 
 Here are some things that surprise folks about Python.

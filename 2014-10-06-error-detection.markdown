@@ -2,6 +2,7 @@
 layout: post
 title:  "Reading Error Detecting and Error Correcting Codes"
 date:   2014-10-06 12:00:00
+alias:  /2014/10/06/error-detection.html
 ---
 
 Last week's [Hacker School](https://www.hackerschool.com)

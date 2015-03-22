@@ -2,6 +2,7 @@
 layout: post
 title:  "In celebration of yield from"
 date:   2014-10-14 11:00:00
+alias:  /2014/10/14/yield-from.html
 ---
 
 A conversation with current Hacker Schooler [Cerek](https://github.com/crockeo)

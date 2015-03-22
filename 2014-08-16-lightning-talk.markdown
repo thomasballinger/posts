@@ -2,6 +2,7 @@
 layout: post
 title:  "PyGotham bpython lightning talk"
 date:   2014-08-16 18:35:00
+alias:  /2014/08/16/lightning-talk.html
 ---
 
 The Python REPL is great! You can try out code before putting it in your

@@ -2,6 +2,7 @@
 layout: post
 title:  "Math Museum Review"
 date:   2014-03-09 12:18:00
+alias:  /2014/03/09/math-museum.html
 ---
 
 Last Saturday I went to the [Museum of Mathematics](http://momath.org/), across from Madison Square Park
