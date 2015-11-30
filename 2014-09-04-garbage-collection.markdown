@@ -6,7 +6,7 @@ alias:  /2014/09/21/garbage-collection.html
 ---
 
 Guy Steele is a smart man who gave a talk sixteen[^1] years ago about the
-design[^2] of the Java[^Java] programming[^programming] language.[^language] [^programming_language]
+design[^2] of the Java[^Java] programming[^programming] language.[^language][^programming_language]
 In Guy Steele's [talk](https://www.youtube.com/watch?v=_ahvzDzKdB0) "[Growing a
 Language](http://www.cs.virginia.edu/~evans/cs655/readings/steele.pdf)" he
 does not tell what *garbage collection* means, and says that is a task
