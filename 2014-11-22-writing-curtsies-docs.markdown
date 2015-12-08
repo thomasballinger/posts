@@ -41,7 +41,7 @@ my documentation adventures. Here's what I want to change soon:
 * FmtStr objects should index on characters, but FSArrays should be
   [width-indexed](http://curtsies.readthedocs.org/en/latest/index.html#fmtstr-len-vs-width)
 
-* use the terminal width of strings isntead of their length for formatting
+* use the terminal width of strings instead of their length for formatting
 
 * use constants instead of strings for key names, ideally copy someone else's
   names; I resisted this because I like the way comparing a retrieved event
@@ -72,7 +72,7 @@ Other lessons from doc writing:
   and it turns out you can still use the provided ReadTheDocs
   build process and theme with the single page HTML sphinx build target.
 
-* It's fun to write things the will show up on a pretty website where anyone
+* It's fun to write things that will show up on a pretty website where anyone
   can read them, and it's most fun to write documentation when you're procrastinating
   something else. (I should have been catching up on email and practicing a
   talk last weekend.)
