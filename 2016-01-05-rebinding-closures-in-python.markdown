@@ -251,8 +251,8 @@ def notice_window_with_method():
 # Less callback-oriented interfaces
 
 Python codebases seem to prefer passing objects that conform to informal
-interfaces to passing functions directly, making associated state explicit
-as attribute on the object.
+interfaces to passing functions directly, using attributes of that object
+for the state being changed.
 
 Further reading:
 
@@ -265,6 +265,8 @@ Further reading:
   [3](http://stackoverflow.com/questions/392349/modify-bound-variables-of-a-closure-in-python)
   [4](http://stackoverflow.com/questions/12091973/python-closure-with-assigning-outer-variable-inside-inner-function)
   [5](http://stackoverflow.com/questions/8447947/is-it-possible-to-modify-variable-in-python-that-is-in-outer-but-not-global-sc)
+
+Thanks Julia Evans and Lindsey Kuper for comments and corrections.
 
 [^PEPs]: Python enhancement proposals are great reading! They summarize
          mailing list discussion by a lot of smart people with Python
