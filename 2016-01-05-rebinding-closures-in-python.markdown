@@ -92,6 +92,8 @@ The feature doesn't make the top 11 of Aaron Meurer's
 [top 10 awesome features of Python that you can't use because you refuse to upgrade to Python 3](
 https://asmeurer.github.io/python3-presentation/slides.html).
 
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Folks who write Python code, what do you think of the new nonlocal keyword in Python 3?</p>&mdash; Thomas Ballinger (@ballingt) <a href="https://twitter.com/ballingt/status/684446320279597056">January 5, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 Here are some thoughts on why this situation doesn't come up
 very much in Python and how people worked around not having
 it in Python 2.
