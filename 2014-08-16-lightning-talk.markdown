@@ -49,12 +49,12 @@ So try out bpython! (some features here are only in master - either download
 the [latest bpython](https://github.com/bpython/bpython) or wait a few weeks
 to be able to use it)
 
-[^1]: I think IPython is terrific, and this was a laugh line - 
+[^1]: I think IPython is terrific, and this was a laugh line -
     most Python developers have heard of it because IPython because it's
     a super awesome, successful, popular library.
 
-[^2]: I made an offhand remark here about IPython-style reloading not being safe - 
-    this wasn't really fair, and I didn't back it up at all. 
+[^2]: I made an offhand remark here about IPython-style reloading not being safe -
+    this wasn't really fair, and I didn't back it up at all.
     What I meant was that `%run`, one way to reload modules in IPython,
     loads the modules globals into the local
     namespace, which is a little scary: if you've deleted globals in
@@ -68,4 +68,4 @@ to be able to use it)
     [autoreloading](http://ipython.org/ipython-doc/dev/config/extensions/autoreload.html)
     in IPython is pretty awesome, and fixes many cases of the
     `from module import func` or `from module import class` problems - thought
-    constants like `from module import MAX_LENGTH` is still a problem.
+    constants like `from module import MAX_LENGTH` still present a problem.

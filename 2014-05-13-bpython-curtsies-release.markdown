@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "bpython curtsies is live!"
+title:  "bpython curtsies is live"
 date:   2014-05-13 09:20:17
 alias: [/2014/05/13/bpython-progress-update.html /2014/05/13/bpython-curtsies-release.html]
 tags: bpython
