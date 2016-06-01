@@ -496,7 +496,7 @@ I hope I've helped you find closure with closures.
 
 Further reading:
 
-* [An earlier post rebinding closures in Python](http://ballingt.com/rebinding-closures-in-python)
+* [An earlier post about rebinding closures in Python](http://ballingt.com/rebinding-closures-in-python)
 * Ned Batchelder's [Facts and myths about Python names and values](http://nedbatchelder.com/text/names.html) and later [PyCon talk](http://nedbatchelder.com/text/names1.html)
 * [PEP 227 Statically Nested Scopes](https://www.python.org/dev/peps/pep-0227/), which includes notes on closure implementation
 * [PEP 3104 Access to Names in Outer Scopes](https://www.python.org/dev/peps/pep-3104/)
