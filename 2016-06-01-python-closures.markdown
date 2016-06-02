@@ -2,10 +2,12 @@
 layout: post
 title:  "Finding closure with closures"
 date:   2016-06-01 16:00:00
+categories: python
 ---
 
-This is a presentation I gave at PyCon 2016. I haven't published the slides,
-but you can [watch the video here](https://www.youtube.com/watch?v=E9wS6LdXM8Y).
+This is a presentation I gave at PyCon 2016.
+You can [watch the video on YouTube](https://www.youtube.com/watch?v=E9wS6LdXM8Y)
+and find the [slides on GitHub](https://github.com/thomasballinger/python-closures-slides).
 
 ---
 
