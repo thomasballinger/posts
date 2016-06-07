@@ -231,6 +231,7 @@ to global.
 
     >>> HIGH_SCORE = 1000
     >>> def new_high_score(score):
+    ...     global HIGH_SCORE
     ...     print('congrats on the high score!')
     ...     print('old high score:', HIGH_SCORE)
     ...     HIGH_SCORE = score
@@ -371,7 +372,7 @@ non-global variables, which I will from now on refer to as "nonlocal" variables.
 
 Like the earlier example demonstrating the usefulness of the `global` keyword,
 the inner `guess` function above assigns to the variable `last_guess` that the
-programmer meant not to local. How can Python be informed of this intent?
+programmer meant not to be local. How can Python be informed of this intent?
 With the new `nonlocal` keyword in Python 3.
 
 Without `nonlocal`, nonlocal variables cannot be rebound to new values.
