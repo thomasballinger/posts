@@ -7,7 +7,9 @@ categories: python
 
 This is a presentation I gave at PyCon 2016.
 You can [watch the video on YouTube](https://www.youtube.com/watch?v=E9wS6LdXM8Y)
-and find the [slides on GitHub](https://github.com/thomasballinger/python-closures-slides).
+and [view the slides](https://cdn.rawgit.com/thomasballinger/python-closures-slides/master/closures.html#1)
+served from the
+[repo on GitHub](https://github.com/thomasballinger/python-closures-slides).
 
 ---
 
