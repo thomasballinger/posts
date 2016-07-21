@@ -145,7 +145,7 @@ cursor position should generally give enough information.
 To get an implementation of this right, it would be helpful to test multiple
 popular terminals for wrapping behavior.
 I briefly looked into orchestrating iTerm for this but found tmux
-easier to do more portable. For that project I use tmux check that ASCII diagrams
+easier to script and more portable. For that project I use tmux check that ASCII diagrams
 correctly describe resizing behavior:
 
     def test_wrapped_undo_after_narrow(self):
@@ -165,7 +165,8 @@ correctly describe resizing behavior:
 
 If there were a really solid implementation of this it would be great, but it
 alone might not be worth the effort. Users of command line interfaces are
-trained to hit ctrl-l to request a clear or redraw.
+trained to hit ctrl-l to request a clear or redraw as a workaround, and are
+already used to aggressive resizing messing up their history.
 
 Rewriting previous lines
 ========================
