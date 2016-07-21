@@ -161,7 +161,7 @@ command line interface, by the second prompt at least some of that content
 is knowable: it was put there by this very same program, one while loop
 iteration ago!
 
-Look out for part 2 where we'll look at using that information to modify previous rows
+In [part 2](/rich-terminal-applications-2) we'll look at using that information to modify previous rows
 and see how terminal window size changes, history rewrapping, and differences
 in terminal emulator behavior make this difficult.
 
