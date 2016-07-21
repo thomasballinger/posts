@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Richer command line interfaces"
-date:   2016-07-14 11:12:17
+date:   2016-07-21 9:30:00
 categories: bpython
 ---
 
@@ -48,12 +48,12 @@ up or may not be enough to fill the window:
 
 <script type="text/javascript" src="https://asciinema.org/a/80488.js" id="asciicast-80488" async></script>
 
-while Python Prompt Toolkit does a nice job, still forcing 5 rows :
+while Python Prompt Toolkit does a nice job, still forcing 5 rows:
 
 <script type="text/javascript" src="https://asciinema.org/a/80489.js" id="asciicast-80489" async></script>
 
-bpython did this only a little until we added a
-much more agressive version a few weeks ago:
+bpython measured the visible space but used too large a minimum completion box
+size until a few weeks ago:
 
 <script type="text/javascript" src="https://asciinema.org/a/79748.js" id="asciicast-79748" async></script>
 
@@ -63,8 +63,8 @@ Implementation
 
 The larger of the two areas available for completion suggestions areas in the
 diagram above is as tall as the height of the
-terminal, which in a unix-y environment is a single cryptic TIOCGWINSZ ioctl()
-call away.
+terminal, which in a unix-y environment is a single cryptic `TIOCGWINSZ`
+`ioctl()` call away.
 But figuring out how much space is available without scrolling depends on
 where in the terminal the prompt has been printed. Finding this is a bit
 tricker.
@@ -94,7 +94,8 @@ additional layers of terminal emulation like tmux and GNU Screen.
 
 Fullscreen, alternate screen-using programs don't care how this content
 gets moved around because they can completely rerender after the resize.
-But a multiline editor might care more: if the resizing behavior can be
+But a line-oriented command line interface should care more:
+if the resizing behavior can be
 predicted editing artifacts can be prevented from polluting terminal history.
 
 Applications
@@ -105,10 +106,11 @@ input to be displayed a row too low on each resize:
 
 ![](/assets/ipythonresize.gif)
 
-It's pretty clear what's desired here, but surprisingly difficult to achieve.
-Versions I've worked on suffer from similar problems. I've worked hard to
+The desired behavior here would be not to fill the screen with repeated
+text, but this is surprisingly difficult to achieve.
+Tools I've worked on suffer from similar problems. I've worked hard to
 minimize them, but I haven't been able to get it anywhere near perfect,
-at least for cases like
+particularly for cases like
 "the user quickly narrows, widens, then narrows the terminal."
 Single resizes of any kind aren't so bad, and the result of any number of
 consecutive height changes is predictable.
@@ -273,5 +275,6 @@ simple](https://github.com/jonathanslenders/python-prompt-toolkit/tree/master/ex
 ---
 
 Thanks to Amjith Ramanujam, author of the wonderful
-[pgcli](https://github.com/dbcli/pgcli) and other interactive REPLs for
-comments.
+[pgcli](https://github.com/dbcli/pgcli) and other interactive REPLs, for
+feedback about these features and for pointing out that Python Prompt Toolkit
+already implements the first one.
