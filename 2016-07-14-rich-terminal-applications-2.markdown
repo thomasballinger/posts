@@ -123,8 +123,10 @@ resize is useful for checking to see how content has been moved around.
 Implementation
 --------------
 
-I spent a considerable amount of time trying to get this right in bpython, to
-little avail. Some later attempts were less complete but more promising.
+I spent a considerable amount of time trying to get this right in bpython,
+but it still fails in many cases.
+Later implementations for other projects look more promising
+but are less complete.
 My first suggestion is to debounce window size changes: wait to redraw until no new
 SIGWINCH signals come in for a bit. This sacrifices responsiveness in order to mess
 up history less: if you're wrong, at least you're only wrong once, ruining a
@@ -147,7 +149,7 @@ cursor position should generally give enough information.
 To get an implementation of this right, it would be helpful to test multiple
 popular terminals for wrapping behavior.
 I briefly looked into orchestrating iTerm for this but found tmux
-easier to script and more portable. For that project I use tmux check that ASCII diagrams
+easier to script and more portable. For that project I use tmux to check that ASCII diagrams
 correctly describe resizing behavior:
 
     def test_wrapped_undo_after_narrow(self):
@@ -165,10 +167,13 @@ correctly describe resizing behavior:
         +------+  +-----------+  +------+  +------+
         """)
 
+<img src="assets/tmuxtests.gif" alt="" style="width: 100%"/>
+
 If there were a really solid implementation of this it would be great, but it
 alone might not be worth the effort. Users of command line interfaces are
 trained to hit ctrl-l to request a clear or redraw as a workaround, and are
-already used to aggressive resizing messing up their history.
+already used to aggressive resizing messing up their history. However the same
+machinery is useful for the next technique.
 
 Rewriting previous lines
 ========================
