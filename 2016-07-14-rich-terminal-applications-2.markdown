@@ -14,12 +14,12 @@ Sometimes programs blur this boundary with fancy formatting in a line-oriented
 command line interface, carefully avoiding overwriting
 previous user inputs and command outputs.
 On-keystroke autocompletion, multiline editing, inline documentation and
-syntax highlighting can be implemented like this, making command line
+syntax highlighting can be implemented with these techniques, making command line
 interfaces more useful.
 
 <script type="text/javascript" src="https://asciinema.org/a/79153.js" id="asciicast-79153" async></script>
 
-But this can be taken further than it usually is!
+But the terminal can be pushed still further!
 Here are three features that I'd like to see
 used in more programs (or I'd like to better understand their tradeoffs).
 
@@ -28,9 +28,9 @@ Checking vertical space before scrolling
 
 When writing this kind of
 program it's useful to consider two separate canvases available for drawing
-the current line and interface widgets like autocomplete suggestion:
+the current line and interface widgets like autocomplete suggestions:
 space that can be drawn in without causing the terminal to scroll down, and
-space that can be drawn in which would cause the terminal to scroll, but would
+space that can be drawn in that would cause the terminal to scroll, but would
 keep the cursor onscreen.
 
 <img src="/assets/simpleterminaldiagram.jpg" alt="" style="width: 100%"/>
@@ -39,11 +39,12 @@ keep the cursor onscreen.
 Applications
 ------------
 
-Most autocompletion doesn't seem to take advantage of this, providing the same
+Most autocompletion doesn't seem to measure and use only the number of
+usable rows below the cursor, instead providing the same
 number of completion suggestions regardless of the amount of space left in the
 terminal.
 
-Fish seems to force 5 rows by default, which may force push terminal content
+Fish seems to force 5 rows by default, which may push terminal content
 up or may not be enough to fill the window:
 
 <script type="text/javascript" src="https://asciinema.org/a/80488.js" id="asciicast-80488" async></script>
@@ -61,13 +62,13 @@ size until a few weeks ago:
 Implementation
 --------------
 
-The larger of the two areas available for completion suggestions areas in the
+The larger of the two areas available for completion suggestions in the
 diagram above is as tall as the height of the
 terminal, which in a unix-y environment is a single cryptic `TIOCGWINSZ`
 `ioctl()` call away.
 But figuring out how much space is available without scrolling depends on
 where in the terminal the prompt has been printed. Finding this is a bit
-tricker.
+tricky.
 We can get at it by querying the terminal for the cursor's
 position with `\x1b[6n`, but it's
 a bit of a hassle because the response comes
@@ -77,7 +78,7 @@ back from the terminal on stdin and needs to be distinguished from user input.
     $ printf "%q\n" $POS
     $'\E[14;1'  # cursor is in row 14, column 1
 
-Once we know where the cursor is we can do some row/column arithmetic to find
+Once we know where the cursor is, we can do some row/column arithmetic to find
 the region that can be used for completion without causing a scroll.
 Keeping previous lines of history visible is generally useful, and
 particularly so when livecoding for a group that is trying to follow along.
@@ -86,7 +87,7 @@ Handling terminal resizes
 =========================
 
 Many terminal emulators allow you to resize a session already in progress --
-something that would have made no sense in a traditional video terminal!
+something that would have made no sense in a traditional video terminal.
 Each time the user changes the terminal size a SIGWINCH signal is sent to
 the program and the terminal emulator moves the terminal contents around.
 The signals may be debounced a bit as they pass through
@@ -96,7 +97,7 @@ Fullscreen, alternate screen-using programs don't care how this content
 gets moved around because they can completely rerender after the resize.
 But a line-oriented command line interface should care more:
 if the resizing behavior can be
-predicted editing artifacts can be prevented from polluting terminal history.
+predicted, editing artifacts can be prevented from polluting terminal history.
 
 Applications
 ------------
@@ -106,7 +107,7 @@ input to be displayed a row too low on each resize:
 
 ![](/assets/ipythonresize.gif)
 
-The desired behavior here would be not to fill the screen with repeated
+The desired behavior here would be to not fill the screen with repeated
 text, but this is surprisingly difficult to achieve.
 Tools I've worked on suffer from similar problems. I've worked hard to
 minimize them, but I haven't been able to get it anywhere near perfect,
@@ -115,7 +116,7 @@ particularly for cases like
 Single resizes of any kind aren't so bad, and the result of any number of
 consecutive height changes is predictable.
 
-Resize behaviors have dramatic (history rewrapping) and
+Resize behaviors have both dramatic (history rewrapping) and
 subtle (which lines are shown or hidden when changing height) differences in
 different terminal emulators, so querying the cursor position after
 resize is useful for checking to see how content has been moved around.
@@ -132,8 +133,8 @@ SIGWINCH signals come in for a bit. This sacrifices responsiveness in order to m
 up history less: if you're wrong, at least you're only wrong once, ruining a
 few rows instead a few dozen.
 
-Changing the height of a terminal window moves text is pretty predictable, and
-the few edge cases can be detected by checking the cursor position after
+Changing the height of a terminal window moves text in a predictable way, with
+a few edge cases that can be detected by checking the cursor position after
 the move.
 
 An example of different behavior requiring a cursor check to detect:
@@ -141,12 +142,12 @@ An example of different behavior requiring a cursor check to detect:
 <img src="assets/vertical-resize-iterm.gif" alt="" style="width: 100%"/>
 <img src="assets/vertical-resize-terminalapp.gif" alt="" style="width: 100%"/>
 
-Changing window width on terminal emulators that wrap text is tricker,
+Changing window width on terminal emulators that wrap text is trickier,
 particularly while text from a previous program remains visible, since
 the length of these lines can't be known. But again, checking for the new
 cursor position should generally give enough information.
 
-To get an implementation of this right, it would be helpful to test multiple
+To get an implementation of this correct, it would be helpful to test multiple
 popular terminals for wrapping behavior.
 I briefly looked into orchestrating iTerm for this but found tmux
 easier to script and more portable. For that project I use tmux to check that ASCII diagrams
@@ -169,17 +170,17 @@ correctly describe resizing behavior:
 
 <img src="assets/tmuxtests.gif" alt="" style="width: 100%"/>
 
-If there were a really solid implementation of this it would be great, but it
+It would be great if there were a really solid implementation of this approach, but it
 alone might not be worth the effort. Users of command line interfaces are
 trained to hit ctrl-l to request a clear or redraw as a workaround, and are
-already used to aggressive resizing messing up their history. However the same
+already used to aggressive resizing messing up their history. However, the same
 machinery is useful for the next technique.
 
 Rewriting previous lines
 ========================
 
 If we remember how many lines have been printed, we can know it's ok to write
-to those lines. For example, this way autocompletion suggestions could be shown *above* the
+to those lines. For example, autocompletion suggestions could be shown *above* the
 current line instead of below:
 
     $ echo hello
@@ -251,7 +252,7 @@ lines wrapping calculations myself.
 After a too-naive approach [the first time](http://ballingt.com/bpython-curtsies)
 led to [bugs](https://github.com/bpython/bpython/issues/574), I'm most
 interested in an approach using a headless terminal emulator to make these
-decisions. I haven't yet found one that has implements linewrapping quite the
+decisions. I haven't yet found one that implements linewrapping quite the
 way graphical terminal emulators do and would appreciate suggestions.
 
 But even ignoring terminal window resizes completely sometimes produces
