@@ -10,12 +10,12 @@ Command Line Creature Comforts
 
 When a command line utility writes to stdout, sometimes that output is going
 to be piped to another utility or redirected to a file. And sometimes the
-input it reads from stdin will be coming from another utility, or a file.
+input it reads from stdin will be coming from a file or another utility.
 But other times that output is just going to be displayed by a terminal emulator,
 and that input is going to be provided by a human typing.
 
 Command line utilities can make allowances for the human input and output
-use cases: here's `ls` using multiple columns (and on your machine, likely
+use cases: here's `ls` using multiple columns (and on your machine likely
 color, too) when its output isn't being piped anywhere.
 
     $ ls > tmp.txt; cat tmp.txt
@@ -31,11 +31,11 @@ might duck out and have fun with some of these resources first:
 
 * [Terminal Whispering](https://www.youtube.com/watch?v=rSnMoClPH2E) (video)
 * [Build your own Command Line with ANSI escape codes](http://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html)
-* [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code)
+* [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code)
 
 
 Some interpreter commands like `bash`, `python`, and `node` switch completely to interactive mode to
-provide a REPL when run without a target and even use `readline` to provide autocompletion,
+provide a REPL when run without a target, and even use `readline` to provide autocompletion,
 completing the rest of a word if only one possible completion exists and listing all
 possible completions if more than one does.
 
@@ -52,9 +52,8 @@ although we no
 longer automatically end up with a paper history of our consultations
 with the console,
 an analogous virtual readout is only a mousewheel flick away.
-However we should still avoid polluting it with
-possible completions to keep the signal to noise ratio high in this scrollback
-buffer history.
+But it's not ideal be lowering the signal to noise ratio of this scrollback
+buffer history by polluting it with completions.
 
 Since the advent of video terminal, we've been free of the typewriter-tyranny of
 only moving right (normal characters), down (`\n`), and to the left
@@ -63,7 +62,7 @@ the traditionally 80-column-by-24-row video terminal. But this freedom
 does not extend to the scrollback buffer; once a row is pushed off the
 screen, it becomes indelible.
 
-This history feature makes sense in the line-oriented paradigm, so
+This history feature only makes sense in the line-oriented paradigm, so
 most so-called fullscreen programs which use the terminal emulator as a canvas
 rather than a souped-up typewriter use the "alternate screen" where history
 is not preserved and writing a newline on the bottom row does not cause a
@@ -71,11 +70,11 @@ frame shift.
 
 <script type="text/javascript" src="https://asciinema.org/a/79147.js" id="asciicast-79147" async></script>
 
-As such, running `vim` or `emacs` does not add a full terminal height of
+As such, exiting `vim` or `emacs` does not add a full terminal height of
 text editor detritus from a session with one of those text editors. Their interaction
-takes place on the alternate screen, although output from `!`-preceded shell
-commands in vim will be added to the regular, history-preserving terminal
-session.
+takes place on the alternate screen. In `vim`, output from `!`-preceded shell
+commands (which do fit the line-oriented paradigm) will be added to the regular,
+history-preserving terminal session.
 
 The two features of scrollback buffer and rich terminal interaction are
 therefore at odds, and this conflict comes to a point in
@@ -85,7 +84,6 @@ with its own prompt whose execution encompasses several inputs and
 corresponding outputs. That barrage of information provided by text editors
 is useful, but, like autocompletion suggestions, would further pollute our
 history.
-
 The fullscreen app approach eschews the scrollback buffer entirely,
 not contributing to it but not mucking it up, either. By contrast, interactive
 line-oriented sessions typically do store their history.
@@ -101,7 +99,8 @@ when the program finishes to preserve it.
 
 Since the session has been added to the regular terminal it will end up in the
 scrollback buffer and be viewable later,
-but while that program runs, previous history cannot be viewed by scrolling up.
+but previous history cannot be viewed by scrolling up while that program is
+running.
 
 Not mucking up history
 ----------------------
@@ -128,7 +127,7 @@ capabilities for redrawing the terminal are based on display rows and columns
 instead of logical lines, the readline library has a tricky job to do when
 an edit -- say, the deletion of word with ctrl-w -- affects other rows before and
 after. It must use what it knows about the current width of the terminal
-to jump the cursor around to rebuild the current line.
+to hop the cursor around to rebuild the current line.
 In fact, it's pretty easy to confuse readline: start a program that uses
 it (like Python), drag the terminal window smaller, then type a long line of
 text.
@@ -136,13 +135,11 @@ I've found libedit, usually used in place of readline of OSX, more difficult
 to confuse; regardless, it's a difficult task.
 
 I'll push out the difficulties introduced by resizing terminal windows and
-reflowing onscreen history to another article, which will cover [my attempt
-at addressing these issues](http://curtsies.readthedocs.io/en/latest/). Let's ignore
-them for now.
+reflowing onscreen history to another article. Let's ignore them for now.
 
 Tools like fish and utop take a sensible approach: although it's rude to alter
 history above the current line, rows *under* the current line can be used as
-temporary space for any transitory information the user might enjoy being hit
+temporary space for any transitory information the user might want to be hit
 with.
 
 <script type="text/javascript" src="https://asciinema.org/a/79153.js" id="asciicast-79153" async></script>
@@ -153,12 +150,12 @@ Multiline editing can even be implemented in this way. Here's IPython
 <script type="text/javascript" src="https://asciinema.org/a/79154.js" id="asciicast-79154" async></script>
 
 It's very important that these autocompletion menus appear *below* the
-current line of text, because terminal emulators provide *no way to read
+current line of text. Terminal emulators provide no way to *read
 the contents of the screen*. Because we can't read that content to save it, if
 we wrote over it, the best cleanup we could do afterwards would be to
 erase the completion with spaces, leaving a gap.
 
-However, some power remains untapped. Although we have no way to know what
+Although we have no way to know what
 content appears above the top row of the current line in the first prompt of a
 command line interface, by the second prompt at least some of that content
 is knowable: it was put there by this very same program, one while loop
@@ -167,8 +164,6 @@ iteration ago!
 In [part 2](/rich-terminal-applications-2) we'll look at using knowledge of
 what had just been written modify previous rows
 and see how terminal window size changes, history rewrapping, and differences
-in terminal emulator behavior make this difficult.
-
-(here's a teaser)
+in terminal emulator behavior make this difficult. Here's a teaser:
 
 <script type="text/javascript" src="https://asciinema.org/a/79155.js" id="asciicast-79155" async></script>
