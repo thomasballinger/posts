@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Interactive Interpreter Undo"
-date:   2016-09-13 10:00:00
+date:   2016-09-13 11:00:00
 ---
 
 Undo is my favorite feature of [the fancy python shell I help
@@ -34,6 +34,7 @@ today.
 * [Hacking fork-on-command into interpreters](#hacking-fork-on-command-into-interpreters)
 
 <br>
+
 ## Undo
 
 When I mistakenly delete half of a blog post I’m working on, I’m sure glad I
@@ -562,8 +563,15 @@ without modifying them each individually.
 
 This project is called [rlundo](https://github.com/thomasballinger/rlundo)
 after the useful wrapper program rlwrap.
-It's a fun hack (and if you to play with it, [it could use some
+It's a fun hack (and if you want to play with it, [it could use some
 love](https://github.com/thomasballinger/rlundo/issues)).
 But it's probably never going to be a robust solution.
 rlundo is a way to try out undo in your favorite interpreter,
 so if you like it you can look at adding it in a less hacky way :)
+
+---
+
+Thanks to Ezekiel Smithburg, Leah Hanson, Julia Evans, and Kamal Murhubi
+for feedback on this post. Thanks to Erin Murray, Vaibhav Sagar, Sarah Ransohoff,
+and Katherine Erickson for edits. Thanks to Mary Rose Cook for feedback on
+an early version of this post.
