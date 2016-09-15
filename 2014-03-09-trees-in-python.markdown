@@ -20,6 +20,10 @@ This week I wrote a lot of trees:
 * [Simple Tree in Java](https://gist.github.com/thomasballinger/9453188) - helping some Java folks write code for some graph traversal
   exercises
 
+The regression tree work resulted in a nice visualization.
+
+<img src="http://ballingt.com/assets/regressiontree.png" style="width: 600px"/>
+
 I use trees a lot of course, but rarely write so many from scratch in a week.
 
 For most of these, I found myself building up functions for a bit (as in the
