@@ -10,11 +10,12 @@ interpreters had it. I’ve [previously
 written](http://ballingt.com/rich-terminal-applications-2) about the mechanics
 of implementing a command line interface that can rewrite its history, but not
 about how to teach a system to undo. I’d like to tell you why I like undo, and
-I hope afterward you'll consider adding it to your favorite interactive interpreter.
-I’m not going to cover how write a program or language implementation from
+I hope afterward you'll consider adding undo to your favorite interactive interpreter.
+I’m not going to cover how to write a program or language implementation from
 scratch with efficient undo as a design goal, although this is also topic I’m
-learning about. (If you have reading suggestions on this topic, please let me
-know!) Instead I’ll go over ways to add undo to existing programs and suggest
+learning about. (If you have reading suggestions on this topic, please [let me
+know!](https://twitter.com/ballingt))
+Instead I’ll go over ways to add undo to existing programs and suggest
 some hacks you can use to try out undo with many command line interfaces
 today.
 
@@ -231,7 +232,7 @@ command in a programming language, then prints the output of that command.
 Interactive interpreters are used to check the syntax or semantics of commands,
 to explore libraries, and to accomplish useful work like data munging in an
 environment that provides immediate feedback. I use interactive interpreters
-to learn and teach because it keeps my Tested Hypotheses per Minute high:
+to learn and teach because using them keeps my Tested Hypotheses per Minute high:
 every sequential step toward a goal is accompanied by a check of my mental
 model of the system, and additional side checks are cheap to make.
 
@@ -566,7 +567,7 @@ after the useful wrapper program rlwrap.
 It's a fun hack (and if you want to play with it, [it could use some
 love](https://github.com/thomasballinger/rlundo/issues)).
 But it's probably never going to be a robust solution.
-rlundo is a way to try out undo in your favorite interpreter,
+rlundo is a way to try out undo in your favorite interpreter
 so if you like it you can look at adding it in a less hacky way :)
 
 ---
