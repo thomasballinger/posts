@@ -2,6 +2,7 @@
 layout: post
 title:  "Interactive Interpreter Undo"
 date:   2016-09-13 11:00:00
+suggestedThumbnail: "http://ballingt.com/assets/rlundopreview.gif"
 ---
 
 Undo is my favorite feature of [the fancy python shell I help
@@ -569,6 +570,8 @@ love](https://github.com/thomasballinger/rlundo/issues)).
 But it's probably never going to be a robust solution.
 rlundo is a way to try out undo in your favorite interpreter
 so if you like it you can look at adding it in a less hacky way :)
+
+<a href="https://twitter.com/ballingt" class="twitter-follow-button" data-show-count="false">Follow @ballingt</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ---
 
