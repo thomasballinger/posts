@@ -28,7 +28,7 @@ others might have.
 
 To find our closure we'll start with the importance of
 environment to our functions and compare lexical and dynamic scope.
-Then follow the evolution of variables scoping in the Python language
+Then we'll follow the evolution of variables scoping in the Python language
 over the last 25 years. We'll conclude that some Python certainly supports
 closures, but that which Python functions count as closures and since which
 version of Python they have depends on the definition of closure used.
