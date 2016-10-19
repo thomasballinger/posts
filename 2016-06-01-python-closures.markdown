@@ -121,7 +121,7 @@ your whole Python program. Since we're stuck with that name, perhaps we
 should imagine each module as its own planet.
 
 When functions are imported from another module,
-they emerge as emissaries from their planets
+they emerge as emissaries from their planets with
 live links back to their home worlds they use to look up variables.
 
 For function objects in Python hold
