@@ -1,0 +1,199 @@
+---
+layout: post
+title:  "On from the Recurse Center, a break, and Dropbox"
+date:   2017-01-10 08:00:00
+---
+
+<style>
+li img {
+  width: 628px;
+}
+img {
+  width: 628px;
+}
+video {
+  width: 628px;
+}
+ul {
+  list-style: none;
+  margin-left: 0 !important;
+}
+</style>
+
+
+Last September I left [the Recurse Center](https://www.recurse.com/), f.k.a. Hacker School.
+Three and a half wonderful years there shaped me as programmer, an educator,
+a contributing community member and above all as a learner.
+
+There's so much to say about the Recurse Center that I have trouble saying anything at all.
+
+Mary Rose Cook [wrote about leaving](https://maryrosecook.com/blog/post/ive-left-the-recurse-center)
+a few months later. Like Mary, I believe I did the best work of my life at the Recurse Center.
+
+Allison Kaptur [wrote about leaving](http://akaptur.com/blog/2014/10/10/im-joining-dropbox/) the previous year and
+[gave a keynote](http://akaptur.com/blog/2015/10/10/effective-learning-strategies-for-programmers/)
+about learning strategies for programmers which draws on her experience at the Recurse Center.
+
+Right after I left I hung out in Montana at a lake that anyone I've helped
+write a BitTorrent client
+[will](https://github.com/search?q=flagfromserver&type=Code&utf8=%E2%9C%93)
+[recognize](assets/flag.jpg).
+
+![Lake at sunset](/assets/prettylake.jpg)
+
+While I was there I went for runs, played through Chrono Trigger, and started writing some Haskell.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dWcMAaSycoM" frameborder="0" allowfullscreen></iframe>
+
+Before fall 2015 I had worked or been in school without more than a couple weeks off at a time for eleven years: summer jobs through college, an internship after graduating, writing software at a neuroimaging lab, attending RC and then 2 days later showing up to help review applications for the next batch.
+I enjoyed it tremendously and was incredibly fortunate to always have work lined up.
+Now I'm also incredibly fortunate to have been able to take so much time off.
+
+![](/assets/bunnyfriend.jpg)
+
+After my Montana trip I moved to Boston. I hung out at coffee
+shops and grassy areas and unlocked rooms at MIT. Which brings us up to 2016.
+
+#Travel
+
+![](/assets/tripphotos/01.jpg)
+
+I explored Western Europe for a couple months with my sister Lauren, including a week-long hike along Hadrian's Wall.
+
+![](/assets/tripphotos/14.jpg)
+
+I also made it to the Dominican Republic for PyCarribean, Vancouver for
+ConFoo, Portland for PyCon, Eugene to watch the Olympic Trials with old family track friends,
+and San Diego.
+
+In September I moved to New York, and in the last couple months I've spent a lot of time in the Bay Area for interviews.
+
+#Projects
+
+<video src="/assets/rewindlines.mp4" autoplay="true" loop="true" controls></video>
+
+I used mostly front-end languages, a change for me; and implemented toy
+programming languages, less of a change.
+
+I prototyped several projects, and wrapped one of them up enough to call it
+done: [Dal Segno](http://dalsegno.ballingt.com/)
+is an interactive programming enviroment similar to
+[Mary's Code Lauren](https://www.youtube.com/watch?v=dOGuPJ6aFzE)
+but with some different design goals.
+
+As I experimented with creating [a programming
+game](https://github.com/thomasballinger/shiplang), I published a
+few prototypes: [early gameplay](http://jan14prototype.ballingt.com/),
+[with programming interface](http://march8prototype.ballingt.com/?simulator),
+[better graphics](http://missilecmd.ballingt.com/).
+
+I wrote a series of blog posts leading up to finally writing about
+[rlundo](https://github.com/thomasballinger/rlundo#rlundo),
+a sweet hack you should check out. The posts were about [CLIs vs
+TUIs](rich-terminal-applications), [fancy CLI
+features](rich-terminal-applications-2), and [undo in interactive
+interpreters](/interactive-interpreter-undo). The last one is pretty long
+and, I think, pretty fun. It includes some Buster
+Keaton-style expressions from me on video.
+
+I played with Elm for a bit, making an [audio
+editor](http://remixcast.com/editor/) and a
+[game](http://love.ballingt.com/) with some [interesting background
+music](http://love.ballingt.com/music.html). I found working with Elm
+really helpful for grokking react + redux. I also found it helpful for getting
+more comfortable with the basics of Haskell.
+
+I got excited about remixing podcasts and created a file format and two UI
+prototypes but didn't do much else with the idea.
+
+I continued to help maintain [bpython](https://github.com/bpython/bpython).
+
+#Talks
+
+![](/assets/newnewtalkplanning.jpg)
+
+I gave [a talk about closures](http://ballingt.com/python-closures)
+at PyCon this year, and
+it was the first talk I've given that I think
+comes close to living up to the talks
+[Ned Batchelder](http://pyvideo.org/speaker/ned-batchelder.html) gives.
+
+At ConFoo and at MongoDB in NYC I gave talks about undo.
+
+At Hack&&Tell I gave some in-progress interactive programming environment
+talks I really enjoyed.
+
+I presented an introduction to network programming in Python for members of the
+Boston Python Users Group.
+
+#Other
+
+![](/assets/tripphotos/newnew08.jpg)
+
+I ate this sandwich in London which had applesauce on it, it was really good.
+
+I became a certified Software Carpentry instructor this year.
+Interactively teaching many dozens of students continues to be something
+I'm interested in but find much more difficult that the one on one
+interactions I have much more practice with.
+
+LIGO found gravitational waves this year! I didn't do anything to help with
+this this year, but I did a long time ago.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">re today&#39;s LIGO gravitational wave discovery: I wrote some code for LIGO! <a href="https://t.co/XwOhLuHrkY">https://t.co/XwOhLuHrkY</a> <a href="https://t.co/UV4NXNAYRZ">pic.twitter.com/UV4NXNAYRZ</a></p>&mdash; Tom  👀🏚 in SF (@ballingt) <a href="https://twitter.com/ballingt/status/697807371498889216">February 11, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+This fall I started interviewing with companies. It was interesting to finally
+see firsthand what interviews were like. I spent a lot of time at the Recurse
+Center helping RCers prepare for interviews if interviewing was something that
+there were nervous about. Sometimes I debriefed them after interviews to assess
+the value of this preparation, but actually being present was much better.
+
+Over three trips out west (many thanks to very patient and hospitable friends
+for housing me), the most fun interview by far was working with Amjad and Haya of
+[repl.it](repl.it). I spent three days with them helping implement
+a [Python debugger](https://repl.it/site/blog/python-debugger) for their
+online REPL/IDE product. At every company at which I interviewed, I was impressed
+with my interviewers and the teams I was applying to join.
+
+#This Year
+
+Today I start work at Dropbox.
+
+Dropbox has been on my radar as a neat place to work since I first attended PyCon in 2011.
+I considered applying at the end of my Recurse Center batch in 2012,
+but stayed on to have a life-changing experience working there.
+My interest increased when, through Dropbox's
+acquisition of Zulip in 2014,
+several people I thought the world of joined Dropbox.
+
+I have a terrific amount to learn in order to become competent and productive
+at Dropbox, so doing that learning is a priority for me right now.
+
+I'd like to learn some web design this year, styling a webpage is like
+pulling teeth. Oh, and I'll have a dental plan, so finally going to make
+some dentist appointments.
+
+I'm excited to be back on the West Coast.
+
+I have a lot to learn about living in the Bay Area.
+Apparently stores close at 9 or 10pm.
+Jaywalking is like having a superpower here, no one else seems to do it.
+
+---
+
+Here are some more Europe trip pictures.
+
+  * ![](/assets/tripphotos/02.jpg)
+  * ![](/assets/tripphotos/03.jpg)
+  * ![](/assets/tripphotos/04.jpg)
+  * ![](/assets/tripphotos/newnew05.jpg)
+  * ![](/assets/tripphotos/06.jpg)
+  * ![](/assets/tripphotos/newnew07.jpg)
+  * ![](/assets/tripphotos/09.jpg)
+  * ![](/assets/tripphotos/10.jpg)
+  * ![](/assets/tripphotos/11.jpg)
+  * ![](/assets/tripphotos/12.jpg)
+  * ![](/assets/tripphotos/13.jpg)
+  * ![](/assets/tripphotos/15.jpg)
+

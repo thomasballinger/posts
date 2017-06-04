@@ -6,9 +6,12 @@ alias:  /2013/12/21/bpython-curtsies.html
 tags: bpython
 ---
 
-I've mostly finished up work on an alternative frontend for bpython - it's
-installable with (updated) `pip install bpython[curtsies]`
-and called `bpython-curtsies`.
+I've mostly finished up work on an alternative frontend for bpython.
+
+Updated: this is now the default bpython frontend,
+installed with `pip install bpython`
+and then run with `bpython`. To use the old frontend, use `bpython-curses`.
+The rest of this post refers to this new frontend as `bpython-curtsies`.
 
 `bpython-curtsies` is bpython with native terminal scrolling:
 
