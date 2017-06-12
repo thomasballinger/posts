@@ -12,7 +12,12 @@ MC’d the Python trivia night as he has done for the past three years.
 
 This year for some reason (maybe because I see him at work?) Brandon asked me to help out with the trivia night. Along with Larry Hastings, each of the three of us wrote eight trivia questions. This post is a draft of what will soon appear on Brandon’s blog in his annual Python Trivia night report.
 
-I wrote questions for the second portion of trivia, presenting the first PyCon trivia questions every not to be written by Brandon! I tried to come up with questions I imagined might incite discussion and participation, but still reward folks who had been using Python for many years.
+---
+
+I wrote questions for the second section of trivia of night, presenting what
+may be the first PyCon trivia questions every not to be written by Brandon!
+I tried to come up with questions I imagined might incite discussion and participation,
+but still reward folks who had been using Python for many years.
 
 # Question 1
 Which of these is not, and never has been, a real CPython error message?
@@ -114,7 +119,8 @@ In what order do the function a, b, and c run in?
 
     a()[b()] = c()
 
-The answer is c, then a, then b. This bit me when someone was writing a bencode parser, see this post for the story. I was surprised that most teams got this.
+The answer is c, then a, then b. This bit me when someone was writing a
+bencode parser, see [this post](http://ballingt.com/surprising-python) for the story. I was surprised that most teams got this.
 
 Answer: c, a, b
 
@@ -136,7 +142,7 @@ The answers are:
 * A.b: py2: instancemethod, py3: function
 
 # Question 6
-Many of the most fundemntal types in Python are available as builtins, but some must be obtained from the types module. Name 3 types available in the types module.
+Many of the most fundamental types in Python are available as builtins, but some must be obtained from the types module. Name 3 types available in the types module.
 
 This was a tricky question to grade: the answers I wanted were things like:
 
