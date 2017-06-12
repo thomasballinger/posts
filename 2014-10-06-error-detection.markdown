@@ -1,8 +1,10 @@
 ---
-layout: post
-title:  "Reading Error Detecting and Error Correcting Codes"
-date:   2014-10-06 12:00:00
-alias:  /2014/10/06/error-detection.html
+aliases:
+    - /2014/10/06/error-detection.html
+    - /2014/10/06/error-detection
+date: 2014-10-06T12:00:00Z
+title: Reading Error Detecting and Error Correcting Codes
+url: /error-detection/
 ---
 
 Last week's [Hacker School](https://www.hackerschool.com)
@@ -147,7 +149,7 @@ and another bit for parity on either the orig data or the checks. I had
 trouble solving m given n because math, so iterate through the possible
 values to check them.
 
-##After reading
+## After reading
 
 Increasing the dimensionality was a good thought, but I should have played
 with this more - obviously increasing the dimensionality is better than making

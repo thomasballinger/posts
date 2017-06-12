@@ -1,9 +1,12 @@
 ---
-layout: post
-title:  "Python Essential Reference Tutorial Quiz"
-date:   2014-05-02 11:12:17
-alias:  /2014/05/02/pyquiz-intro-quiz.html
-tags: python
+aliases:
+    - /2014/05/02/pyquiz-intro-quiz.html
+    - /2014/05/02/pyquiz-intro-quiz
+date: 2014-05-02T11:12:17Z
+tags:
+    - python
+title: Python Essential Reference Tutorial Quiz
+url: /pyquiz-intro-quiz/
 ---
 
 Sometimes Python serves as a convenient lingua franca:
@@ -28,7 +31,7 @@ David Beazley's
 [Python Essential Reference](http://www.amazon.com/Python-Essential-Reference-4th-Edition/dp/0672329786)
 is terrific for this, but I wanted something snappier.
 
-So I present a nitpicky [quiz version of pages 5 through 25 of Python Essential Reference]({{site.url}}/python_essential_reference_intro_quiz.html),
+So I present a nitpicky [quiz version of pages 5 through 25 of Python Essential Reference](/python_essential_reference_intro_quiz.html),
 a brief overview of Python. It's supposed to be a learning quiz; there's no
 score, just some red pixels to motivate you to understand the answer.
 Some of the questions are annoying: don't worry about it,

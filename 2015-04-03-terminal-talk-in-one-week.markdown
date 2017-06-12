@@ -1,8 +1,9 @@
 ---
-layout: post
-title:  "Terminal talk in one week"
-date:   2015-04-03 9:00:00
-tags: terminal nofeed
+date: 2015-04-03T09:00:00Z
+tags:
+    - terminal
+title: Terminal talk in one week
+url: /terminal-talk-in-one-week/
 ---
 
 Last night [Amy Hanlon](http://mathamy.com/), [A. Jesse Jiryu Davis](http://emptysqua.re/)

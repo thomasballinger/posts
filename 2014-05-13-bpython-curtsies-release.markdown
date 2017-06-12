@@ -1,10 +1,13 @@
 ---
-layout: post
-title:  "bpython curtsies is live"
-date:   2014-05-13 09:20:17
-alias: [/2014/05/13/bpython-progress-update.html /2014/05/13/bpython-curtsies-release.html]
+aliases:
+    - /2014/05/13/bpython-progress-update.html
+    - /2014/05/13/bpython-curtsies-release.html
+date: 2014-05-13T09:20:17Z
 tags: bpython
+title: bpython curtsies is live
+url: /bpython-curtsies-release/
 ---
+
 bpython 0.13 has [just been released](https://groups.google.com/forum/#!topic/bpython/jtvr4l1Snkc)
 and it includes bpython-curtsies, the bpython
 frontend I've been working on on and off for 9 months. If you're
@@ -19,7 +22,7 @@ not reading on your phone or in bed with an ipad, take a moment to try it out:
     >>> <ctrl-D to exit bpython>
     $ echo "you're back in the shell!"
 
-![bpython-curtsies scroll demo]({{ site.url }}/assets/bpython-curtsies-scroll-demo-large.gif)
+![bpython-curtsies scroll demo](/assets/bpython-curtsies-scroll-demo-large.gif)
 
 Also check out features like F7 to edit and reevaluate the current session,
 dictionary key autocompletion, and ctrl-X to edit the current line.

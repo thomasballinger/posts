@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Basic banner grabbing with Python"
-date:   2016-06-29 11:12:17
+date: 2016-06-28T11:12:17Z
 tags: python
+title: Basic banner grabbing with Python
+url: /banner-grabbing-with-python/
 ---
 
 I'm attempting to write a bot and I was trying to find some information

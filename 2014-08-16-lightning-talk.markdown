@@ -1,9 +1,11 @@
 ---
-layout: post
-title:  "PyGotham bpython lightning talk"
-date:   2014-08-16 18:35:00
-alias:  /2014/08/16/lightning-talk.html
+aliases:
+    - /2014/08/16/lightning-talk.html
+    - /2014/08/16/lightning-talk
+date: 2014-08-16T18:35:00Z
 tags: bpython
+title: PyGotham bpython lightning talk
+url: /lightning-talk/
 ---
 
 The Python REPL is great! You can try out code before putting it in your

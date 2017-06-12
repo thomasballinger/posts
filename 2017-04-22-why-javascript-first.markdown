@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  "Why teach JavaScript first"
-date:   2017-04-22 23:00:00
+date: 2017-04-22T23:00:00Z
+title: Why teach JavaScript first
+url: /why-javascript-first/
 ---
 
 A couple of tweet threads from Sarah Drasner caught my eye today:

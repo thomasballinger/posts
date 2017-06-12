@@ -1,9 +1,11 @@
 ---
-layout: post
-title:  "Trees in Python"
-date:   2014-03-09 11:12:17
-alias:  /2014/03/09/trees-in-python.html
+aliases:
+    - /2014/03/09/trees-in-python.html
+    - /2014/03/17/trees-in-python.html
+date: 2014-03-09T11:12:17Z
 tags: python
+title: Trees in Python
+url: /trees-in-python/
 ---
 
 This week I wrote a lot of trees:

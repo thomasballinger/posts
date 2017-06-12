@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  "Debouncing terminology"
-date:   2017-04-23 18:30:00
+date: 2017-04-04T18:30:00Z
+title: Debouncing terminology
+url: /debouncing/
 ---
 
 <div class="asking-questions-intro"></div>
@@ -16,79 +16,79 @@ in an irc channel or Slack or Zulip.
   .asking-questions-intro {
     width: 510px;
     height: 400px;
-    background: url("{{ site.baseurl }}/assets/drawings/7c4f1317-631d-40b4-8ccd-249653574024.png") no-repeat;
+    background: url("/assets/drawings/7c4f1317-631d-40b4-8ccd-249653574024.png") no-repeat;
     background-position: left -170px top -130px;
   }
   .asking-questions-simple {
     width: 250px;
     height: 120px;
-    background: url("{{ site.baseurl }}/assets/drawings/98dea813-3f23-4b06-88b7-241cde1b9926.png") no-repeat;
+    background: url("/assets/drawings/98dea813-3f23-4b06-88b7-241cde1b9926.png") no-repeat;
     background-position: left -50px top -30px;
   }
   .asking-questions-multiple {
     width: 300px;
     height: 240px;
-    background: url("{{ site.baseurl }}/assets/drawings/80addbcf-f5d9-4e5b-ba3d-f9bca5ec43f0.png") no-repeat;
+    background: url("/assets/drawings/80addbcf-f5d9-4e5b-ba3d-f9bca5ec43f0.png") no-repeat;
     background-position: left 0px top -30px;
   }
   .asking-questions-cancel-nevermind {
     width: 300px;
     height: 100px;
-    background: url("{{ site.baseurl }}/assets/drawings/98dea813-3f23-4b06-88b7-241cde1b9926.png") no-repeat;
+    background: url("/assets/drawings/98dea813-3f23-4b06-88b7-241cde1b9926.png") no-repeat;
     background-position: left -30px top -210px;
   }
   .asking-questions-cancel-ignore {
     width: 300px;
     height: 150px;
-    background: url("{{ site.baseurl }}/assets/drawings/98dea813-3f23-4b06-88b7-241cde1b9926.png") no-repeat;
+    background: url("/assets/drawings/98dea813-3f23-4b06-88b7-241cde1b9926.png") no-repeat;
     background-position: left -30px top -320px;
   }
   .asking-questions-cancel-still-use {
     width: 300px;
     height: 170px;
-    background: url("{{ site.baseurl }}/assets/drawings/98dea813-3f23-4b06-88b7-241cde1b9926.png") no-repeat;
+    background: url("/assets/drawings/98dea813-3f23-4b06-88b7-241cde1b9926.png") no-repeat;
     background-position: left -30px top -490px;
   }
   .asking-questions-queued-up {
     width: 400px;
     height: 350px;
-    background: url("{{ site.baseurl }}/assets/drawings/98dea813-3f23-4b06-88b7-241cde1b9926.png") no-repeat;
+    background: url("/assets/drawings/98dea813-3f23-4b06-88b7-241cde1b9926.png") no-repeat;
     background-position: left -500px top -80px;
   }
   .asking-questions-queued-up-cancel {
     width: 400px;
     height: 240px;
-    background: url("{{ site.baseurl }}/assets/drawings/98dea813-3f23-4b06-88b7-241cde1b9926.png") no-repeat;
+    background: url("/assets/drawings/98dea813-3f23-4b06-88b7-241cde1b9926.png") no-repeat;
     background-position: left -350px top -860px;
   }
   .asking-questions-concurrent {
     width: 320px;
     height: 250px;
-    background: url("{{ site.baseurl }}/assets/drawings/98dea813-3f23-4b06-88b7-241cde1b9926.png") no-repeat;
+    background: url("/assets/drawings/98dea813-3f23-4b06-88b7-241cde1b9926.png") no-repeat;
     background-position: left -480px top -480px;
   }
   .asking-questions-throttling {
     width: 380px;
     height: 270px;
-    background: url("{{ site.baseurl }}/assets/drawings/80addbcf-f5d9-4e5b-ba3d-f9bca5ec43f0.png") no-repeat;
+    background: url("/assets/drawings/80addbcf-f5d9-4e5b-ba3d-f9bca5ec43f0.png") no-repeat;
     background-position: left -580px top -10px;
   }
   .asking-questions-debouncing {
     width: 200px;
     height: 290px;
-    background: url("{{ site.baseurl }}/assets/drawings/80addbcf-f5d9-4e5b-ba3d-f9bca5ec43f0.png") no-repeat;
+    background: url("/assets/drawings/80addbcf-f5d9-4e5b-ba3d-f9bca5ec43f0.png") no-repeat;
     background-position: left -10px top -520px;
   }
   .asking-questions-debouncing-after-first {
     width: 350px;
     height: 500px;
-    background: url("{{ site.baseurl }}/assets/drawings/80addbcf-f5d9-4e5b-ba3d-f9bca5ec43f0.png") no-repeat;
+    background: url("/assets/drawings/80addbcf-f5d9-4e5b-ba3d-f9bca5ec43f0.png") no-repeat;
     background-position: left -340px top -500px;
   }
   .asking-questions-queue {
     width: 250px;
     height: 470px;
-    background: url("{{ site.baseurl }}/assets/drawings/80addbcf-f5d9-4e5b-ba3d-f9bca5ec43f0.png") no-repeat;
+    background: url("/assets/drawings/80addbcf-f5d9-4e5b-ba3d-f9bca5ec43f0.png") no-repeat;
     background-position: left -320px top -10px;
   }
 </style>

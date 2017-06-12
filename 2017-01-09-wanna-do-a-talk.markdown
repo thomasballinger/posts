@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  "Who am I to give this talk?"
-date:   2017-01-09 20:00:00
+date: 2017-01-09T20:00:00Z
+title: Who am I to give this talk?
+url: /wanna-do-a-talk/
 ---
 
 Mariatta Wijaya tweeted
@@ -14,7 +14,7 @@ you are not qualified to give a talk you have an idea for.
 You can read other answers by following the tweet thread.
 Here are some of my thoughts.
 
-##How am I qualified to give a talk on a topic?
+## How am I qualified to give a talk on a topic?
 
 * You'll spend dozens of hours preparing for your talk. By that time you'll be
   enough of an expert to have something to say to people who haven't spent
@@ -26,7 +26,7 @@ Here are some of my thoughts.
 * If it's an introductory talk, then organization, presentation, and pedagogy
   will be more important than expertise.
 
-##Why should I give a talk about a library instead of the library author?
+## Why should I give a talk about a library instead of the library author?
 
 * The library author might not be attending this conference, or be
   too busy to prepare and give this talk.

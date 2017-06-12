@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Rebinding closures in Python"
-date:   2016-01-05 12:00:00
 categories: python javascript
+date: 2016-01-05T12:00:00Z
+title: Rebinding closures in Python
+url: /rebinding-closures-in-python/
 ---
 
 [Since the release of Python 2.2](
@@ -13,27 +13,27 @@ as arguments. A common workaround to this limiting behavior
 was to set these at function definition time
 with keyword arguments:
 
-{% highlight python %}
+{{< highlight python >}}
 #!/usr/bin/env python2.0
 def find(self, name):
     return filter(lambda x, name=name: x == name, self.list_attribute)
-{% endhighlight %}
+{{< / highlight >}}
 
 Since 2001 this workaround is no longer necessary and the references
 to `name` in the body of the lambda function are resolved using the
 current value in the outer `find` function:
 
-{% highlight python %}
+{{< highlight python >}}
 #!/usr/bin/env python2.2
 def find(self, name):
     return filter(lambda x: x == name, self.list_attribute)
-{% endhighlight %}
+{{< / highlight >}}
 
 However Python functions could not *modify* these bindings:
 although an object referred to by a variable from an outer
 scope can be modified, like appending an item to a list,
 
-{% highlight python %}
+{{< highlight python >}}
 #!/usr/bin/env python2
 def get_odds(candidates):
     odds = []
@@ -43,12 +43,12 @@ def get_odds(candidates):
     for x in candidates:
         add_if_odd(x)
     return odds
-{% endhighlight %}
+{{< / highlight >}}
 
 a function could not change
 to which object a variable from an outer scope referred.
 
-{% highlight python %}
+{{< highlight python >}}
 #!/usr/bin/env python2
 def largest_odd(candidates):
     highest = 1
@@ -59,7 +59,7 @@ def largest_odd(candidates):
     for x in sorted(candidates):
         save_if_odd(x)
     return highest
-{% endhighlight %}
+{{< / highlight >}}
 
 One of my favorite changes in Python 3 is the addition of the nonlocal
 keyword. Described by [PEP 3104](https://www.python.org/dev/peps/pep-3104/)[^PEPs]
@@ -71,7 +71,7 @@ we mean the already existing binding from outside this function.
 The nonlocal keyword works analogously to the global keyword which
 allows reassignment of global variables in Python 2 and 3.
 
-{% highlight python %}
+{{< highlight python >}}
 #!/usr/bin/env python3
 def largest_odd(candidates):
     highest = 1
@@ -82,7 +82,7 @@ def largest_odd(candidates):
     for x in sorted(candidates):
         save_if_odd(x)
     return highest
-{% endhighlight %}
+{{< / highlight >}}
 
 I think this is a great addition that helps me write code the way I would
 in JavaScript or a Lisp. But despite this lack of rebinding closures in Python
@@ -122,7 +122,7 @@ but in Python data privacy isn't enforced.
 While using a closure to hide data is a
 common pattern in JavaScript,
 
-{% highlight javascript %}
+{{< highlight javascript >}}
 function createPerson(name){
     var age = 10;
     return {
@@ -137,12 +137,12 @@ function createPerson(name){
 
 var me = createPerson('Tom')
 me.greet()
-{% endhighlight %}
+{{< / highlight >}}
 
 that same pattern in Python 3 would be
 considered pretty weird code:
 
-{% highlight python %}
+{{< highlight python >}}
 #!/usr/bin/env python3
 class Person(object):
     pass
@@ -165,7 +165,7 @@ class Person(object):
 me = Person.create('Tom')
 me.greet()
 
-{% endhighlight %}
+{{< / highlight >}}
 
 # Mutable object hack
 
@@ -173,7 +173,7 @@ Writing to a closed over variable is useful for producing a callback
 which records somewhere that it was called.
 Here's a signal handing example in Python 3:
 
-{% highlight python %}
+{{< highlight python >}}
 #!/usr/bin/env python3
 from signal import signal, SIGWINCH
 
@@ -190,7 +190,7 @@ def notice_window():
         if window_size_changed:
             window_size_changed = False
             print('window size has changed')
-{% endhighlight %}
+{{< / highlight >}}
 
 The most direct translation of the above is to use
 the simplest possible mutable object to store
@@ -198,7 +198,7 @@ the boolean `window_size_changed` value.
 Read-only closures with mutable objects seem
 to provide an (ugly) equivalent to full closures:
 
-{% highlight python %}
+{{< highlight python >}}
 #!/usr/bin/env python2
 from signal import signal, SIGWINCH
 
@@ -214,7 +214,7 @@ def notice_window_with_mutable_object():
         if window_size_changed[0]:
             window_size_changed[0] = False
             print('window size has changed')
-{% endhighlight %}
+{{< / highlight >}}
 
 This works in every case I can think of, but is ugly because
 the list only obfuscates what's going on.
@@ -232,7 +232,7 @@ at attribute lookup time. This more clearly communicates what state
 might be modified because methods of objects often change the state of the
 objects to which the belong.
 
-{% highlight python %}
+{{< highlight python >}}
 #!/usr/bin/env python2
 class Noticer:
     def __init__(self):
@@ -248,7 +248,7 @@ def notice_window_with_method():
         if noticer.window_size_changed:
             noticer.window_size_changed = False
             print('window size has changed')
-{% endhighlight %}
+{{< / highlight >}}
 
 # Less callback-oriented interfaces
 

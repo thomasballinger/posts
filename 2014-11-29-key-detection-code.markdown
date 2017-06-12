@@ -1,9 +1,11 @@
 ---
-layout: post
-title:  "Comparing key detection code in Blessed and Curtsies"
-date:   2014-11-29 16:05:00
-alias:  /2014/11/29/key-detection-code.html
+aliases:
+    - /2014/11/29/key-detection-code.html
+    - /2014/11/29/key-detection-code
+date: 2014-11-29T16:05:00Z
 tags: terminal
+title: Comparing key detection code in Blessed and Curtsies
+url: /key-detection-code/
 ---
 
 [lmontopo](http://lmontopo.github.io/) and I recently contributed

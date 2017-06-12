@@ -1,9 +1,11 @@
 ---
-layout: post
-title:  "August bpython sprint"
-date:   2014-08-31 18:35:00
-alias:  /2014/08/31/august-bpython-sprint.html
+aliases:
+    - /2014/08/31/august-bpython-sprint.html
+    - /2014/08/31/august-bpython-sprint
+date: 2014-08-31T18:35:00Z
 tags: bpython
+title: August bpython sprint
+url: /august-bpython-sprint/
 ---
 
 I just took a vacation for a week! I spend time with my family in Washington

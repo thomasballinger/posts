@@ -1,9 +1,11 @@
 ---
-layout: post
-title:  "Native scrolling in bpython: bpython-curtsies"
-date:   2013-12-21 11:12:17
-alias:  /2013/12/21/bpython-curtsies.html
+aliases:
+    - /2013/12/21/bpython-curtsies.html
+    - /2013/12/21/bpython-curtsies
+date: 2013-12-23T11:12:17Z
 tags: bpython
+title: 'Native scrolling in bpython: bpython-curtsies'
+url: /bpython-curtsies/
 ---
 
 I've mostly finished up work on an alternative frontend for bpython.
@@ -15,18 +17,18 @@ The rest of this post refers to this new frontend as `bpython-curtsies`.
 
 `bpython-curtsies` is bpython with native terminal scrolling:
 
-![bpython-curtsies scroll demo]({{ site.url }}/assets/bpython-curtsies-scroll-demo-large.gif)
+![bpython-curtsies scroll demo](/assets/bpython-curtsies-scroll-demo-large.gif)
 
 It also has send-to-editor (F7 by default) and an improved version of
 good old bpython rewind: `raw_input` prompts are saved so they don't need
 to be entered again, and a new environment is used instead of the old one,
 so variable bindings are actually undone.
 
-![bpython-curtsies undo, editor, and caching stdin demo]({{ site.url }}/assets/bpython-curtsies-undo-editor-prompt-save-demo.gif)
+![bpython-curtsies undo, editor, and caching stdin demo](/assets/bpython-curtsies-undo-editor-prompt-save-demo.gif)
 
 Since it's not limited to keys curses can detect, there are more keybinds:
 
-![bpython-curtsies keys demo]({{ site.url }}/assets/bpython-curtsies-demo-large.gif)
+![bpython-curtsies keys demo](/assets/bpython-curtsies-demo-large.gif)
 
 [Curtsies](https://github.com/thomasballinger/curtsies) is a terminal wrapper I'll write more about in another
 post.

@@ -1,9 +1,13 @@
 ---
-layout: post
-title:  "Python and JavaScript"
-date:   2014-3-17 10:00:00
-alias:  2014/03/17/python-javascript.html
-tags: python javascript
+aliases:
+    - 2014/03/17/python-javascript.html
+    - 2014/03/17/python-javascript
+date: 2014-04-17T10:00:00Z
+tags:
+  - python
+  - javascript
+title: Python and JavaScript
+url: /python-javascript/
 ---
 
 One late night at Hacker School a few months ago, I had the chance to

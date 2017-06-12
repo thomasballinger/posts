@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Two types of command line interfaces"
-date:   2016-07-09 11:12:17
 categories: bpython
+date: 2016-07-09T11:12:17Z
+title: Two types of command line interfaces
+url: /rich-terminal-applications/
 ---
 
 Command Line Creature Comforts

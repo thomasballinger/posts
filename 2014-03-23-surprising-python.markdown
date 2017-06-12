@@ -1,9 +1,13 @@
 ---
-layout: post
-title:  "Surprising Python"
-date:   2014-03-23 21:39:00
-alias:  /2014/03/23/surprising-python.html
-tags: python hacker-school
+aliases:
+    - /2014/03/23/surprising-python.html
+    - /2014/03/23/surprising-python
+date: 2014-03-23T21:39:00Z
+tags:
+    - python
+    - hacker-school
+title: Surprising Python
+url: /surprising-python/
 ---
 
 Here are some things that surprise folks about Python.

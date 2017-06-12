@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Richer command line interfaces"
-date:   2016-07-21 9:30:00
 categories: bpython
+date: 2016-07-14T09:30:00Z
+title: Richer command line interfaces
+url: /rich-terminal-applications-2/
 ---
 
 This post is preceded by a description of [two types of command line

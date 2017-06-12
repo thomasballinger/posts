@@ -1,8 +1,10 @@
 ---
-layout: post
-title:  "Math Museum Review"
-date:   2014-03-09 12:18:00
-alias:  /2014/03/09/math-museum.html
+aliases:
+    - /2014/03/09/math-museum.html
+    - /2014/03/09/math-museum
+date: 2014-03-09T12:18:00Z
+title: Math Museum Review
+url: /math-museum/
 ---
 
 Last Saturday I went to the [Museum of Mathematics](http://momath.org/), across from Madison Square Park
@@ -52,7 +54,7 @@ Some neat ideas from the museum:
   thereby forming a graph. If we allow relative transposition, we now have a
   smaller graph that looks like this:
 
-  ![chords graph]({{ site.url }}/assets/chords.png)
+  ![chords graph](/assets/chords.png)
 
   where the numbers represent the intervals. A major chord is in the middle; 4
   half steps, then three more half steps. It was a new idea to me, so I found it cool,
@@ -68,10 +70,10 @@ Some neat ideas from the museum:
   As an undergraduate physics major, I'm embarrassed to admit this I didn't
   remember what the word meant at all from when I last learned about it.
 
-  ![square wheeled bike]({{ site.url }}/assets/bike.jpg)
+  ![square wheeled bike](/assets/bike.jpg)
 
 * Fractal Tree - a really intuitive description of a fractal: take a picture
   of yourself, overlay it on your arms. Overlay each of those overlays' arms
   with yourself again, etc.
 
-  ![fractal tree]({{ site.url }}/assets/fractaltree.jpg)
+  ![fractal tree](/assets/fractaltree.jpg)

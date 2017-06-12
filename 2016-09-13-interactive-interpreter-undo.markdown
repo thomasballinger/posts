@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Interactive Interpreter Undo"
-date:   2016-09-13 11:00:00
-suggestedThumbnail: "http://ballingt.com/assets/rlundopreview.gif"
+date: 2016-09-13T11:00:00Z
+suggestedThumbnail: http://ballingt.com/assets/rlundopreview.gif
+title: Interactive Interpreter Undo
+url: /interactive-interpreter-undo/
 ---
 
 Undo is my favorite feature of [the fancy python shell I help

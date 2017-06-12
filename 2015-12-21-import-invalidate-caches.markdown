@@ -1,12 +1,11 @@
 ---
-layout: post
-title:  "Remember to use invalidate_caches() in Python 3"
-date:   2015-12-21 14:00:00
 categories: bpython python
+date: 2015-12-21T14:00:00Z
+title: Remember to use invalidate_caches() in Python 3
+url: /import-invalidate-caches/
 ---
 
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">This code fails 42% of the time. <a href="https://t.co/kTWKHrff3Q">https://t.co/kTWKHrff3Q</a> <a href="https://t.co/pxLTYjkPYU">pic.twitter.com/pxLTYjkPYU</a></p>&mdash; Thomas Ballinger (@ballingt) <a href="https://twitter.com/ballingt/status/679016654651703296">December 21, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{< tweet 679016654651703296 >}}
 
 I was getting intermittent failures of a
 test that checked that a feature of
@@ -23,7 +22,7 @@ changing the environment in which the failing test ran.
 I whittled down the combination of the two tests to the
 following:[^source]
 
-{% highlight python %}
+{{< highlight python >}}
 import os, sys, shutil
 
 if os.path.exists('tempdir'):
@@ -36,16 +35,16 @@ import tempmod1
 
 temp = open('tempdir/tempmod2.py', 'w')
 import tempmod2
-{% endhighlight %}
+{{< / highlight >}}
 
 In Python 3.3 or later an import error is raised by this code:
 
-{% highlight python %}
+{{< highlight python >}}
 Traceback (most recent call last):
   File "tmp1.py", line 12, in <module>
     import tempmod2
 ImportError: No module named 'tempmod2'
-{% endhighlight %}
+{{< / highlight >}}
 
 I found a few more clues:
 
@@ -154,7 +153,7 @@ that introduces this discrepancy between systems. While the code above
 reliably fails on an OS X machine and the Linux machines I tested it on,
 code below always fails on OS X and *usually* succeeds for me on a Linux machine.
 
-{% highlight python %}
+{{< highlight python >}}
 with tempfile.NamedTemporaryFile(suffix='.py') as temp:
     path, modname = os.path.split(temp.name)
     sys.path.append(path)
@@ -165,7 +164,7 @@ with tempfile.NamedTemporaryFile(suffix='.py') as temp:
     sys.path.append(path)
 
     __import__(modname.replace('.py', ''))
-{% endhighlight %}
+{{< / highlight >}}
 
 If you know what's going on, please let me know!
 

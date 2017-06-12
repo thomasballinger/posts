@@ -1,10 +1,10 @@
 ---
-layout: post
-title:  "Methods in Python"
-date:   2017-05-06 19:00:00
+date: 2017-05-06T19:00:00Z
+title: Methods in Python
+url: /python-methods/
 ---
 
-#Meet self
+# Meet self
 
 In Python we have functions and methods.
 

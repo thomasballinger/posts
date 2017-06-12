@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Finding closure with closures"
-date:   2016-06-01 16:00:00
 categories: python
+date: 2016-06-01T16:00:00Z
+title: Finding closure with closures
+url: /python-closures/
 ---
 
 This is a presentation I gave at PyCon 2016.

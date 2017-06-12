@@ -1,15 +1,17 @@
 ---
-layout: post
-title:  "Python Prompt Toolkit impressions"
-date:   2014-09-30 22:00:00
-alias:  /2014/09/30/prompt-toolkit.html
+aliases:
+    - /2014/09/30/prompt-toolkit.html
+    - /2014/09/30/prompt-toolkit
+date: 2014-09-30T22:00:00Z
 tags: terminal
+title: Python Prompt Toolkit impressions
+url: /prompt-toolkit/
 ---
 
 Last night I discovered Jonathan Slenders' [Python Terminal Toolkit](https://github.com/jonathanslenders/python-prompt-toolkit): a fancy interface to
 the Python interpreter very much like
 [bpython-curtsies](http://ballingt.com/2013/12/21/bpython-curtsies.html), the project I've
-been working on on and off for a year. I was simultaneously very excited to 
+been working on on and off for a year. I was simultaneously very excited to
 see this work and a little depressed - on first glance many aspects
 of the project seem better than bpython, and appears to include a terminal
 wrapper at least as nice as my [curtsies](https://github.com/thomasballinger/curtsies)
@@ -26,7 +28,7 @@ These are my raw, unedited thoughts mostly so I can take stock of them.
 Things I love
 -------------
 
-* vi and emacs readline keybindings - 
+* vi and emacs readline keybindings -
   tos9 wants to add vi keybindings to bpython, but what Jonathan is written
   is more powerful than I had imagined.
 * Multiline command editing done well!

@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  "On from the Recurse Center, a break, and Dropbox"
-date:   2017-01-10 08:00:00
+date: 2017-01-09T08:00:00Z
+title: On from the Recurse Center, a break, and Dropbox
+url: /2016/
 ---
 
 <style>
@@ -54,7 +54,7 @@ Now I'm also incredibly fortunate to have been able to take so much time off.
 After my Montana trip I moved to Boston. I hung out at coffee
 shops and grassy areas and unlocked rooms at MIT. Which brings us up to 2016.
 
-#Travel
+# Travel
 
 ![](/assets/tripphotos/01.jpg)
 
@@ -68,7 +68,7 @@ and San Diego.
 
 In September I moved to New York, and in the last couple months I've spent a lot of time in the Bay Area for interviews.
 
-#Projects
+# Projects
 
 <video src="/assets/rewindlines.mp4" autoplay="true" loop="true" controls></video>
 
@@ -108,7 +108,7 @@ prototypes but didn't do much else with the idea.
 
 I continued to help maintain [bpython](https://github.com/bpython/bpython).
 
-#Talks
+# Talks
 
 ![](/assets/newnewtalkplanning.jpg)
 
@@ -126,7 +126,7 @@ talks I really enjoyed.
 I presented an introduction to network programming in Python for members of the
 Boston Python Users Group.
 
-#Other
+# Other
 
 ![](/assets/tripphotos/newnew08.jpg)
 
@@ -156,7 +156,7 @@ a [Python debugger](https://repl.it/site/blog/python-debugger) for their
 online REPL/IDE product. At every company at which I interviewed, I was impressed
 with my interviewers and the teams I was applying to join.
 
-#This Year
+# This Year
 
 Today I start work at Dropbox.
 

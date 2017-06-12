@@ -1,9 +1,14 @@
 ---
-layout: post
-title:  "Prepping for a Python talk with code snippets"
-date:   2014-02-16 11:12:17
-alias:  /2014/02/16/code-talk-prep.html
-tags: hacker-school python bpython
+aliases:
+    - /2014/02/16/code-talk-prep.html
+    - /2014/02/16/code-talk-prep
+date: 2014-02-16T11:12:17Z
+tags:
+    - hacker-school
+    - python
+    - bpython
+title: Prepping for a Python talk with code snippets
+url: /code-talk-prep/
 ---
 
 After not making much progress on bpython for a while, someone in #bpython

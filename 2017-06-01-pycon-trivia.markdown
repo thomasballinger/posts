@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  "PyCon Trivia 2017"
-date:   2017-06-04 10:00:00
+date: 2017-06-01T10:00:00Z
+title: PyCon Trivia 2017
+url: /pycon-trivia/
 ---
 
 Brandon Rhodes, in addition to chairing the PyCon and giving a talk this year,

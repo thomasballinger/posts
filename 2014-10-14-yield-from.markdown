@@ -1,14 +1,16 @@
 ---
-layout: post
-title:  "In celebration of yield from"
-date:   2014-10-14 11:00:00
-alias:  /2014/10/14/yield-from.html
+aliases:
+    - /2014/10/14/yield-from.html
+    - /2014/10/14/yield-from
+date: 2014-10-14T11:00:00Z
 tags: python
+title: In celebration of yield from
+url: /yield-from/
 ---
 
 A conversation with current Hacker Schooler [Cerek](https://github.com/crockeo)
 about writing a
-boggle solver in Haskell motivated me to squeeze in writing up a 
+boggle solver in Haskell motivated me to squeeze in writing up a
 solution in Python yesterday morning between appointments with
 Hacker Schoolers.
 
@@ -52,7 +54,7 @@ this:
 
 Having independently come up with something pretty close to the functionality
 of `yield from` solidifies how that construct works for me.
-See [the vim `:TOhtml`-generated diff]({{ site.url }}/assets/yield-from-diff.html) for the full code.[^1]
+See [the vim `:TOhtml`-generated diff](/assets/yield-from-diff.html) for the full code.[^1]
 One more reason to be using Python 3 by default! :)
 
 [^1]: The ugly timing code was for figuring out that the Python 3 code was 40% faster.

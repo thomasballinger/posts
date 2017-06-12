@@ -1,8 +1,10 @@
 ---
-layout: post
-title:  "Garbage collection"
-date:   2014-09-21 23:15:00
-alias:  /2014/09/21/garbage-collection.html
+aliases:
+    - /2014/09/21/garbage-collection.html
+    - /2014/09/21/garbage-collection
+date: 2014-09-04T23:15:00Z
+title: Garbage collection
+url: /garbage-collection/
 ---
 
 Guy Steele is a smart man who gave a talk sixteen[^1] years ago about the
