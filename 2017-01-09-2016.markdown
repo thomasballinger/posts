@@ -151,7 +151,7 @@ the value of this preparation, but actually being present was much better.
 
 Over three trips out west (many thanks to very patient and hospitable friends
 for housing me), the most fun interview by far was working with Amjad and Haya of
-[repl.it](repl.it). I spent three days with them helping implement
+[repl.it](https://repl.it). I spent three days with them helping implement
 a [Python debugger](https://repl.it/site/blog/python-debugger) for their
 online REPL/IDE product. At every company at which I interviewed, I was impressed
 with my interviewers and the teams I was applying to join.
