@@ -14,9 +14,9 @@ Function definitions in Python look like this:
         return "{} or bust!".format(x)
 
 And method definitions look like this:
-    
+
     class Person:
-        def sloganize(self):
+        def sloganize(self, x):
             return "{} or bust!".format(x)
 
 # Classes are buckets of functions
@@ -25,6 +25,10 @@ When we write Python code, we don't really write methods; we write class
 statements which contain function definitions.
 
 Class statements look like this:
+
+    class Person:
+       greeting = 'hello'
+       x = 4 + 3
 
 which is syntactic sugar for something like this:
 
