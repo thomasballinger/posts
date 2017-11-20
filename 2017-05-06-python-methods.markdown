@@ -114,14 +114,14 @@ A method is a version of a function that takes one less argument,
 an example of the technique of "partial application."
 Say we have the general rectangle drawing function below:
 
-    def drawRect(color, width, height, x, y):
+    def draw_rect(color, width, height, x, y):
         """Draws a rectangle"""
         ...
 
 If we wanted to make a specialized version of this function for drawing small
 blue square, we might write a new function that calls this old version:
 
-    def drawSmallBlueSquare(x, y):
+    def draw_small_blue_square(x, y):
         """Draws a small blue square at the passed coordinates"""
         drawRect('blue', 2, 2, x, y)
 
@@ -129,31 +129,32 @@ To be more concise, and to avoid the extra layer of call stack in our error
 message stack traces, we could use partial application instead:
 
     >>> import functools
-    >>> drawLargeRedSquare = functools.partial(drawRect, 'blue', 100, 100)
+    >>> draw_large_red_square = functools.partial(draw_rect, 'red', 100, 100)
 
 In this version we didn't write a docstring or a new signature ourselves.
 `inspect.signature` is smart enough to tell how to use this function:
 
-    >>> inspect.signature(drawLargeRedSquare)
+    >>> inspect.signature(draw_large_red_square)
     <Signature (x, y)>
 
-but our error message still refers to the original version of the function:
+but unfortunately our error message still refers to the original version of the function:
 
-    >>> drawLargeRedSquare(1, 2, 3)
+    >>> draw_large_red_square(1, 2, 3)
     Traceback (most recent call last):
       File "<input>", line 1, in <module>
-        drawLargeRedSquare(1, 2, 3)
+        draw_large_red_square(1, 2, 3)
     TypeError: drawRect() takes 5 positional arguments but 6 were given
 
 Partial application can be really convenient!
 
-    >>> forcePrint = functools.partial(print, file=sys.stderr, flush=True)
+    >>> force_print = functools.partial(print, file=sys.stderr, flush=True)
+    >>> intdict = functools.partial(collections.defaultdict, int)
 
 Based on the similarity of these error messages, you might thing that this
 method version of the function is implemented with by using
 `functools.partial` to partially apply the
 instance to the first parameter of the original function object. Good guess!
-I looked at the c code, and it's not. But the behavior is similar, it's sort
+I looked at the CPython code and it's not. But the behavior is similar, it's sort
 of a special, written-in-C, optimized version of this.
 
 # Method binding rocks
