@@ -123,10 +123,10 @@ blue square, we might write a new function that calls this old version:
 
     def draw_small_blue_square(x, y):
         """Draws a small blue square at the passed coordinates"""
-        drawRect('blue', 2, 2, x, y)
+        draw_rect('blue', 2, 2, x, y)
 
-To be more concise, and to avoid the extra layer of call stack in our error
-message stack traces, we could use partial application instead:
+To be more concise and to avoid the extra layer of call stack in our error
+message stack traces we could use partial application instead:
 
     >>> import functools
     >>> draw_large_red_square = functools.partial(draw_rect, 'red', 100, 100)
