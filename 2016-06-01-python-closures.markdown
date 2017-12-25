@@ -40,28 +40,34 @@ HTML, the other for bolding text in the terminal. We'll import these functions
 from their respective modules using the `from ... import ... as ` syntax
 because they both have the same name.
 
-    >>> from htmlformat import bold as htmlbold
-    >>> from terminalformat import bold as termbold
+{{< highlight python >}}
+>>> from htmlformat import bold as htmlbold
+>>> from terminalformat import bold as termbold
+{{< / highlight >}}
 
 The source code for these two functions can be viewed with the builtin
 inspect module.
 
-    >>> import inspect
-    >>> print(inspect.getsource(htmlbold))
-    def bold(text):
-        return '{}{}{}'.format(BOLDBEFORE, text, BOLDAFTER)
+{{< highlight python >}}
+>>> import inspect
+>>> print(inspect.getsource(htmlbold))
+def bold(text):
+    return '{}{}{}'.format(BOLDBEFORE, text, BOLDAFTER)
 
-    >>> print(inspect.getsource(termbold))
-    def bold(text):
-        return '{}{}{}'.format(BOLDBEFORE, text, BOLDAFTER)
+>>> print(inspect.getsource(termbold))
+def bold(text):
+    return '{}{}{}'.format(BOLDBEFORE, text, BOLDAFTER)
+{{< / highlight >}}
 
 
 Although these functions appear identical, they have different behavior:
 
-    >>> htmlbold('eggplant')
-    '<b>eggplant</b>'
-    >>> termbold('eggplant')
-    '\x1b[1meggplant\x1b[0m'
+{{< highlight python >}}
+>>> htmlbold('eggplant')
+'<b>eggplant</b>'
+>>> termbold('eggplant')
+'\x1b[1meggplant\x1b[0m'
+{{< / highlight >}}
 
 How is this possible; what differs between these two functions?
 Here's another, similar question: We saw before that the `bold`
@@ -72,12 +78,14 @@ If we call that function
 after setting a local variable with the same name, will that
 change its behavior? Will
 
-    >>> from htmlformat import bold as htmlbold
-    >>> def signbold(phrase):
-    ...     BEFOREBOLD = '(in Sharpie) '
-    ...     return htmlbold(phrase)
-    ...
-    >>> signbold('eggplant')
+{{< highlight python >}}
+>>> from htmlformat import bold as htmlbold
+>>> def signbold(phrase):
+...     BEFOREBOLD = '(in Sharpie) '
+...     return htmlbold(phrase)
+...
+>>> signbold('eggplant')
+{{< / highlight >}}
 
 output `'<b>eggplant</b>'` or `'(in Sharpie) eggplant</b'`?
 
@@ -97,23 +105,27 @@ surround the word eggplant.
 
 What about changing the global variable?
 
-    >>> from htmlformat import bold as htmlbold
-    >>> BEFOREBOLD = '(in Sharpie) '
-    >>> htmlbold('eggplant')
+{{< highlight python >}}
+>>> from htmlformat import bold as htmlbold
+>>> BEFOREBOLD = '(in Sharpie) '
+>>> htmlbold('eggplant')
+{{< / highlight >}}
 
 More eggplant sandwich on bold tags! The global variables in another
 module are not affected by changes to global variables in this one.
 
 Now let's finally take a look at those bold functions.
 
-    BEFOREBOLD = '<b>'               BEFOREBOLD = '\x1b[1m'
-    AFTERBOLD = '</b>'               AFTERBOLD = '\x1b[0m'
+{{< highlight python >}}
+BEFOREBOLD = '<b>'               BEFOREBOLD = '\x1b[1m'
+AFTERBOLD = '</b>'               AFTERBOLD = '\x1b[0m'
 
-    def bold(text):                  def bold(text):
-        return '{}{}{}'.format(          return '{}{}{}'.format(
-          BOLDBEFORE,                      BOLDBEFORE,
-          text,                            text,
-          BOLDAFTER)                       BOLDAFTER)
+def bold(text):                  def bold(text):
+    return '{}{}{}'.format(          return '{}{}{}'.format(
+      BOLDBEFORE,                      BOLDBEFORE,
+      text,                            text,
+      BOLDAFTER)                       BOLDAFTER)
+{{< / highlight >}}
 
 Each formatting module has its own global variables.
 Indeed, "global" variables are terribly named because there aren't global to
@@ -163,9 +175,11 @@ Identifying the scope of a variable is a task Python programmers do
 frequently as they read code, so you may already have an intuition for
 the rules. Let's try at a few examples to understand the rule.
 
-    >>> def movie_titleize(phrase):
-    ...     capitalized = phrase.title()
-    ...     return capitalized + ": The Untold Story"
+{{< highlight python >}}
+>>> def movie_titleize(phrase):
+...     capitalized = phrase.title()
+...     return capitalized + ": The Untold Story"
+{{< / highlight >}}
 
 In this function for building great movie titles, are `phrase` and
 `capitalized` local or global variables?
@@ -183,11 +197,13 @@ link to home module. For an altogether different reason,
 most would say that none of the functions we have seen so far are closures.
 Hang on for that reason in a few minutes.
 
-    >>> def catchy(phrase):
-    ...     options = [phrase.title(), DEFAULT_TITLE]
-    ...     options.sort(key=catchiness)
-    ...     return options[1]
-    ...
+{{< highlight python >}}
+>>> def catchy(phrase):
+...     options = [phrase.title(), DEFAULT_TITLE]
+...     options.sort(key=catchiness)
+...     return options[1]
+...
+{{< / highlight >}}
 
 In this function for finding catchy phrases, are `phrase`, `options`,
 `DEFAULT_TITLE`, and `catchiness` local variables or global variables?
@@ -195,10 +211,12 @@ Once you decide, you can find out whether you agree with the Python
 interpreter by checking those interesting attributes of the function's
 code object:
 
-    >>> catchy.__code__.co_varnames
-    ('phrase', 'options')
-    >>> catchy.__code__.co_names
-    ('catchiness', 'DEFAULT_TITLE', 'sort', 'catchiness')
+{{< highlight python >}}
+>>> catchy.__code__.co_varnames
+('phrase', 'options')
+>>> catchy.__code__.co_names
+('catchiness', 'DEFAULT_TITLE', 'sort', 'catchiness')
+{{< / highlight >}}
 
 `phrase` and `options` are local variables because the first was a parameter
 and the second was assigned to. `DEFAULT_TITLE` and `catchiness` fit neither
@@ -212,13 +230,15 @@ would also need to include.
 Your programmer intuition might disagree with Python's categorization
 in this next example.
 
-    >>> HIGH_SCORE = 1000
-    >>> def new_high_score(score):
-    ...     print('congrats on the high score!')
-    ...     print('old high score:', HIGH_SCORE)
-    ...     HIGH_SCORE = score
-    ... 
-    >>> new_high_score(1042)
+{{< highlight python >}}
+>>> HIGH_SCORE = 1000
+>>> def new_high_score(score):
+...     print('congrats on the high score!')
+...     print('old high score:', HIGH_SCORE)
+...     HIGH_SCORE = score
+... 
+>>> new_high_score(1042)
+{{< / highlight >}}
 
 It certainly looks like the author of the function wanted `HIGH_SCORE` to
 be a global variable, but Python categorizes it as a local variable
@@ -231,20 +251,22 @@ The programmer can express this authorial intent to Python with the `global`
 keyword, which changes the categorization of `HIGH_SCORE` from local variable
 to global.
 
-    >>> HIGH_SCORE = 1000
-    >>> def new_high_score(score):
-    ...     global HIGH_SCORE
-    ...     print('congrats on the high score!')
-    ...     print('old high score:', HIGH_SCORE)
-    ...     HIGH_SCORE = score
-    ...
-    >>> new_high_score.__code__.co_varnames
-    ('score', 'HIGH_SCORE')
-    >>> new_high_score.__code__.co_names
-    ('print',)
-    >>> new_high_score(1042)
-    congrats on the high score!
-    old high score: 1000
+{{< highlight python >}}
+>>> HIGH_SCORE = 1000
+>>> def new_high_score(score):
+...     global HIGH_SCORE
+...     print('congrats on the high score!')
+...     print('old high score:', HIGH_SCORE)
+...     HIGH_SCORE = score
+...
+>>> new_high_score.__code__.co_varnames
+('score', 'HIGH_SCORE')
+>>> new_high_score.__code__.co_names
+('print',)
+>>> new_high_score(1042)
+congrats on the high score!
+old high score: 1000
+{{< / highlight >}}
 
 With the global keyword we've now completed a description of how scope
 has worked in Python from its inception through to Python 2.0 in the year 2000.
@@ -253,15 +275,17 @@ But an important method of closing free variables was still not available to
 us, one required by most to classify a function as a closure:
 using outer scopes that are not the global scope.
 
-    def tallest_building():
-        buildings = {'Burj Khalifa': 828,
-                     'Shanghai Tower': 632,
-                     'Abraj Al-Bait': 601}
+{{< highlight python >}}
+def tallest_building():
+    buildings = {'Burj Khalifa': 828,
+                 'Shanghai Tower': 632,
+                 'Abraj Al-Bait': 601}
 
-        def height(name):
-            return buildings[name]
+    def height(name):
+        return buildings[name]
 
-        return max(buildings.keys(), key=height)
+    return max(buildings.keys(), key=height)
+{{< / highlight >}}
 
 Are the variables `name` and `buildings` local or global variables in the
 `height` function above? `name` is certainly local as a parameter, but
@@ -272,12 +296,14 @@ not defined" NameError. Optionally in Python 2.1, then by default in Python
 2.2, variables from outer non-global scopes were added and are found at
 `.__code__.co_freevars`:
 
-    >>> height.__code__.co_varnames
-    ('name',)
-    >>> height.__code__.co_names
-    ()
-    >>> height.__code__.co_freevars
-    ('buildings',)
+{{< highlight python >}}
+>>> height.__code__.co_varnames
+('name',)
+>>> height.__code__.co_names
+()
+>>> height.__code__.co_freevars
+('buildings',)
+{{< / highlight >}}
 
 Typically when people talk about closures they mean closing around these
 in between outer scopes that are neither local nor global. Closing over
@@ -289,16 +315,18 @@ producing many different mappings of its local variables to values.
 Each of which must be kept track of so long as a function that was defined
 in this or an enclosing scope still exists.
 
-    formatters = {}
-    colors = ['red', 'green', 'blue']
-    for color in colors:
-        def in_color(s):
-            return ('<span style="color:' +
-                    color + '">' + s + '</span>')
-        formatters[color] = in_color
+{{< highlight python >}}
+formatters = {}
+colors = ['red', 'green', 'blue']
+for color in colors:
+    def in_color(s):
+        return ('<span style="color:' +
+                color + '">' + s + '</span>')
+    formatters[color] = in_color
 
 
-    formatters['green']('hello')
+formatters['green']('hello')
+{{< / highlight >}}
 
 The code above defines several functions for formatting text in color in html.
 With which color does the green one of these functions format the text
@@ -310,18 +338,20 @@ three functions have the same behavior: coloring strings blue. If each
 function is to have a different value associated with the color variable it is
 necessary to create separate scopes for these functions to be defined in:
 
-    formatters = {}
-    colors = ['red', 'green', 'blue']
-    def make_color_func(color):
-        def in_color(s):
-            return ('<span style="color:' +
-                    color + '">' + s + '</span>')
-        return in_color
+{{< highlight python >}}
+formatters = {}
+colors = ['red', 'green', 'blue']
+def make_color_func(color):
+    def in_color(s):
+        return ('<span style="color:' +
+                color + '">' + s + '</span>')
+    return in_color
 
-    for color in colors:
-        formatters[color] = make_color_func(color)
+for color in colors:
+    formatters[color] = make_color_func(color)
 
-    formatters['green']('hello')
+formatters['green']('hello')
+{{< / highlight >}}
 
 Each time the `make_color_func` function is called, a new local mapping
 is created binding color to one of red, green or blue; a function called
@@ -361,16 +391,18 @@ or that Python has "read-only" closures, not "full" closures.
 This comes from an asymmetry between global variables and outer
 non-global variables, which I will from now on refer to as "nonlocal" variables.
 
-    >>> def get_number_guesser(answer):
-    ...     last_guess = None
-    ...     def guess(n):
-    ...         if n == last_guess:
-    ...             print('already guessed that!')
-    ...         last_guess = n
-    ...         return n == answer
-    ... 
-    >>> guess = get_number_guesser(12)
-    >>> guess(9)
+{{< highlight python >}}
+>>> def get_number_guesser(answer):
+...     last_guess = None
+...     def guess(n):
+...         if n == last_guess:
+...             print('already guessed that!')
+...         last_guess = n
+...         return n == answer
+... 
+>>> guess = get_number_guesser(12)
+>>> guess(9)
+{{< / highlight >}}
 
 Like the earlier example demonstrating the usefulness of the `global` keyword,
 the inner `guess` function above assigns to the variable `last_guess` that the
@@ -409,13 +441,15 @@ have been modifiable in Python for a long time. And now that nonlocal
 is here, the need for compatibility with Python 2 code that many library authors
 have prevents some uses. Consider this abridged excerpt from Django:
 
-    def decorating_function(user_function):
-        ...
-        nonlocal_root = [root]  # make updateable non-locally
+{{< highlight python >}}
+def decorating_function(user_function):
+    ...
+    nonlocal_root = [root]  # make updateable non-locally
 
-        def wrapper():
-            nonlocal_root[0] = oldroot[NEXT]
-            ...
+    def wrapper():
+        nonlocal_root[0] = oldroot[NEXT]
+        ...
+{{< / highlight >}}
 
 Since the root variable in the outer function cannot directly changed, it is
 stuck in the simplest possible mutable object -- a list -- which is mutated
@@ -431,12 +465,14 @@ needed, often that state will be placed in a class instance. State on objects
 in Python is readable and instrospectable, and the methods of an object
 can be used as callbacks.
 
-    def tallest_building():
-        buildings = {'Burj Khalifa': 828,
-                     'Shanghai Tower': 632,
-                     'Abraj Al-Bait': 601}
+{{< highlight python >}}
+def tallest_building():
+    buildings = {'Burj Khalifa': 828,
+                 'Shanghai Tower': 632,
+                 'Abraj Al-Bait': 601}
 
-        return max(buildings.keys(), key=buildings.get)
+    return max(buildings.keys(), key=buildings.get)
+{{< / highlight >}}
 
 Here the `get` method of the builtin Python dictionary object is used as a
 callback, which concisely expresses what data the method will operate on.
@@ -451,23 +487,25 @@ interface with that object. In both languages the following
 pattern is possible, but in JavaScript it is commonplace while in Python it is
 unheard of.
 
-    >>> class Person(object): pass
-    >>> def create_person(name):
-    ...     age = 10
-    ...     p = Person()
-    ...     def birthday():
-    ...         nonlocal age
-    ...         age = age + 1
-    ...     p.birthday = birthday
-    ...     p.greet = lambda: print("Hi, I'm", name, "and I'm", age, "years old")
-    ...     return p
-    ... 
-    >>> me = create_person('Tom')
-    >>> me.birthday()
-    >>> me.age
-    Traceback (most recent call last):
-      File "<input>", line 1, in <module>
-    AttributeError: 'Problem' object has no attribute 'age'
+{{< highlight python >}}
+>>> class Person(object): pass
+>>> def create_person(name):
+...     age = 10
+...     p = Person()
+...     def birthday():
+...         nonlocal age
+...         age = age + 1
+...     p.birthday = birthday
+...     p.greet = lambda: print("Hi, I'm", name, "and I'm", age, "years old")
+...     return p
+... 
+>>> me = create_person('Tom')
+>>> me.birthday()
+>>> me.age
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+AttributeError: 'Problem' object has no attribute 'age'
+{{< / highlight >}}
 
 The above code hides data in local variables of a constructor function
 which inner functions have access to, then adds these methods to the `Person`

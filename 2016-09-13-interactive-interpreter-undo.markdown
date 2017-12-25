@@ -237,15 +237,17 @@ to learn and teach because using them keeps my Tested Hypotheses per Minute high
 every sequential step toward a goal is accompanied by a check of my mental
 model of the system, and additional side checks are cheap to make.
 
-<div class="code-with-caption">
-<pre><code>>>> print(42 + 7)
+{{< highlight python >}}
+>>> print(42 + 7)
 51
 >>> colors = ["purple", "orange"]
 >>> print(colors)
 ["purple", "orange"]
 >>> colors.append("red")
 >>> print(colors)
-["purple", "orange", "red"]</code></pre><br>
+["purple", "orange", "red"]
+{{< / highlight >}}
+
 A Python interactive interpreter session. Commands like <code>colors =
 ["purple", "orange"]</code> and <code>colors.append("red")</code> modify the state of the
 interpreter. Other commands like <code>print(42 + 7)</code> and
@@ -386,6 +388,7 @@ with Python’s inspection abilities to do things like ask whether a variable
 name is defined resulted in inconsistencies in recreated states that could
 affect code.
 
+{{< highlight python >}}
     >>> a = 1
     >>> 'b' in locals()
     False
@@ -393,6 +396,7 @@ affect code.
     >>> <undo>
     >>> 'b' in locals()
     True
+{{< / highlight >}}
 
 The older strategy is still used in cases where the initial state cannot
 easily be reproduced, as when it is executed from a debugger with existing
@@ -495,20 +499,22 @@ while the other executes the entered command. If the user types "undo," then
 that process dies and the other wakes up and resumes execution at that
 earlier point.
 
-    import code, os, sys
-    def read_line(prompt=""):
-        while True:
-            s = input(prompt)
-            if s == 'undo':
-                sys.exit()  # restores prev. state in parent
-            if os.fork() == 0:  # this is the child
-                return s
-            else:  # this is the parent
-                os.wait()  # wait for child process to die
-    console = code.InteractiveConsole()
+{{< highlight python >}}
+import code, os, sys
+def read_line(prompt=""):
     while True:
-        src = read_line('>>> ')
-        console.runsource(src)
+        s = input(prompt)
+        if s == 'undo':
+            sys.exit()  # restores prev. state in parent
+        if os.fork() == 0:  # this is the child
+            return s
+        else:  # this is the parent
+            os.wait()  # wait for child process to die
+console = code.InteractiveConsole()
+while True:
+    src = read_line('>>> ')
+    console.runsource(src)
+{{< / highlight >}}
 
 Fork works well enough for simple programs, but [fork is
 dangerous](http://www.evanjones.ca/fork-is-dangerous.html). Once the process

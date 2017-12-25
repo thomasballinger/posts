@@ -30,6 +30,7 @@ Which of these is not, and never has been, a real CPython error message?
 
 The answer is that d, “cell variable foo referenced in enclosing scope after deletion” has never been a CPython error message. Here’s an interactive Python 3 session that produces errors a, b, and e:
 
+{{< highlight python >}}
     >>> foo
     Traceback (most recent call last):
       File "<input>", line 1, in <module>
@@ -61,9 +62,11 @@ The answer is that d, “cell variable foo referenced in enclosing scope after d
       File "<input>", line 3, in inner
         foo
     NameError: free variable 'foo' referenced before assignment in enclosing scope
+{{< / highlight >}}
 
 Error c only exists in Python 2:
 
+{{< highlight python >}}
     >>> def function():
     ...     foo = 1
     ...     def inner():
@@ -71,9 +74,11 @@ Error c only exists in Python 2:
     ...     del foo
     SyntaxError: can not delete variable 'foo' referenced in nested scope
     >>>
+{{< / highlight >}}
 
 and when we try the same code in Python 3 (or what we were planning to type before that pesky syntax error stopped us from typing the next like of our function)
 
+{{< highlight python >}}
     >>> def function():
     ...     foo = 1
     ...     def inner():
@@ -91,6 +96,7 @@ and when we try the same code in Python 3 (or what we were planning to type befo
         foo
     NameError: free variable 'foo' referenced before assignment in enclosing scope
     we get a runtime error instead.
+{{< / highlight >}}
 
 What does error d, “cell variable foo referenced in enclosing scope after deletion” mean? I made it up, imagining Python was trying to give a more descriptive message describing this last case.
 
@@ -107,17 +113,21 @@ Which of these features were not added until Python 3?
 
 The answer is that list comprehensions (2.0), generator expressions (2.4) and nested scopes (2.2, really 2.1 in the first __future__ compiler directive) are all from Python 2, while CPython did not get readline completion by default, requiring
 
+{{< highlight python >}}
     >>> import rlcompleter
     >>> import readline
     >>> readline.parse_and_bind("tab: complete")
     until Python 3.4.
+{{< / highlight >}}
 
 I had originally wanted to require teams to arrange these features in the order in which they were added to Python, planning to score answers with one minus the Kendall tau distance of answer to the key, aka the number of bubblesort swaps required. But Brandon helpfully pointed out this would be difficult to grade on the spot, so we changed the question to be 5 binary 2 or 3 answers.
 
 # Question 3
 In what order do the function a, b, and c run in?
 
+{{< highlight python >}}
     a()[b()] = c()
+{{< / highlight >}}
 
 The answer is c, then a, then b. This bit me when someone was writing a
 bencode parser, see [this post](http://ballingt.com/surprising-python) for the story. I was surprised that most teams got this.
@@ -192,8 +202,10 @@ There are a bunch. It was clear some teams were guessing, but many guesses were 
 
 To see a full list of these:
 
+{{< highlight python >}}
     >>> help()
     >>> topics
+{{< / highlight >}}
 
 # Question 8
 

@@ -153,20 +153,22 @@ I briefly looked into orchestrating iTerm for this but found tmux
 easier to script and more portable. For that project I use tmux to check that ASCII diagrams
 correctly describe resizing behavior:
 
-    def test_wrapped_undo_after_narrow(self):
-        self.assert_undo("""
-                                 +------+  +------+
-        +------+  +-----------+  |$rw   |  |$rw   |
-        +------+  +-----------+  +------+  +------+
-        |$rw   |  |$rw        |  |>1    |  |>1    |
-        |>1    |  |>1         |  |>stuff|  |>@    |
-        |>stuff|  |>stuff     |  |abcdef+  ~      ~
-        |abcdef+  |abcdefghijk+  |ghijkl+  ~      ~
-        |ghijkl+  |lmnopq     |  |mnopq |  ~      ~
-        |mnopq |  |>@         |  |>@    |  ~      ~
-        |>@    ~  ~           ~  ~      ~  ~      ~
-        +------+  +-----------+  +------+  +------+
-        """)
+{{< highlight python >}}
+def test_wrapped_undo_after_narrow(self):
+    self.assert_undo("""
+                             +------+  +------+
+    +------+  +-----------+  |$rw   |  |$rw   |
+    +------+  +-----------+  +------+  +------+
+    |$rw   |  |$rw        |  |>1    |  |>1    |
+    |>1    |  |>1         |  |>stuff|  |>@    |
+    |>stuff|  |>stuff     |  |abcdef+  ~      ~
+    |abcdef+  |abcdefghijk+  |ghijkl+  ~      ~
+    |ghijkl+  |lmnopq     |  |mnopq |  ~      ~
+    |mnopq |  |>@         |  |>@    |  ~      ~
+    |>@    ~  ~           ~  ~      ~  ~      ~
+    +------+  +-----------+  +------+  +------+
+    """)
+{{< /highlight >}}
 
 <img src="assets/tmuxtests.gif" alt="" style="width: 100%"/>
 
@@ -183,28 +185,32 @@ If we remember how many lines have been printed, we can know it's ok to write
 to those lines. For example, autocompletion suggestions could be shown *above* the
 current line instead of below:
 
-    $ echo hello
-    hello
-    $ prompt_with_autocompletion_above
-    > s = "a"
-    > s += "b"
-    > s += "c"
-    > s
-    'abc'
-    > s.en|
+{{< highlight python >}}
+$ echo hello
+hello
+$ prompt_with_autocompletion_above
+> s = "a"
+> s += "b"
+> s += "c"
+> s
+'abc'
+> s.en|
+{{< /highlight >}}
 
 ---
 
-    $ echo hello
-    hello
-    $ prompt_with_autocompletion_above
-    > s = "a"
-    > s += "b"
-    > s+--------+
-    > s|encode  |
-    'ab|endswith|
-    > s.en      |
-       +========+
+{{< highlight python >}}
+$ echo hello
+hello
+$ prompt_with_autocompletion_above
+> s = "a"
+> s += "b"
+> s+--------+
+> s|encode  |
+'ab|endswith|
+> s.en      |
+   +========+
+{{< /highlight >}}
 
 To do this, it's necessary for the program to model how much of the terminal can be
 written to and restored:

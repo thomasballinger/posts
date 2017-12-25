@@ -59,10 +59,12 @@ and incoming connections (when a computer not
 on your network initiates a connection with one on your network) can be
 considered separately. The former probably wouldn't be blocked, because
 
-    s = socket.socket()
-    s.connect(('google.com', 80))
-    s.send(b'GET /\n\n')
-    print(s.recv(10000))
+{{< highlight python >}}
+s = socket.socket()
+s.connect(('google.com', 80))
+s.send(b'GET /\n\n')
+print(s.recv(10000))
+{{< / highlight >}}
 
 is how your browser downloads web pages; if the router blocked the outgoing connect, this wouldn't work), but the latter could be.
 It's hard to run a server locally that accepts incoming connections, and it
@@ -96,39 +98,48 @@ But! If you'd like to play with sockets, then OK, and you're awesome.
 
 You want to connect to "the host." I'm guessing this is www.reddit.com?
 
-    s = socket.socket() #TCP is the default, so no arguments needed
-    s.connect(('www.reddit.com', 80))  # From that wikipedia article before, web servers usually listen for connections on port 80
+{{< highlight python >}}
+s = socket.socket() #TCP is the default, so no arguments needed
+s.connect(('www.reddit.com', 80))  # From that wikipedia article before, web servers
+                                   # usually listen for connections on port 80
+{{< / highlight >}}
 
 Great, now we have a connection. That's right, the next step is to send some bytes. The bytes we need to send are the bytes that make up an HTTP request, because we're going to talk to www.reddit.com using the HTTP protocol (see http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Example_session)
 
-    s.send('GET / HTTP/1.1\nHost: www.reddit.com\n\n')
+{{< highlight python >}}
+s.send('GET / HTTP/1.1\nHost: www.reddit.com\n\n')
+{{< / highlight >}}
 
 There! We've sent our bytes. These socket connections we have are two way, so we can now check to see if reddit.com has sent us anything back.
 
-    print s.recv(1000)
+{{< highlight python >}}
+print s.recv(1000)
 
-    'HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\nx-frame-options: S
-    AMEORIGIN\r\nx-content-type-options: nosniff\r\nx-xss-protection: 1; mode=block\
-    r\nServer: \'; DROP TABLE servertypes; --\r\nVary: accept-encoding\r\nDate: Fri,
-     23 May 2014 05:05:41 GMT\r\nTransfer-Encoding:  chunked\r\nConnection: keep-ali
-    ve\r\nConnection: Transfer-Encoding\r\n\r\n00006000\r\n<!doctype html><html xmln
-    s="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>reddit: th
-    e front page of the internet</title><meta name="keywords" content=" reddit, redd
-    it.com, vote, comment, submit " /><meta name="description" content="reddit: the
-    front page of the internet" /><meta http-equiv="Content-Type" content="text/html
-    ; charset=UTF-8" /><meta name="viewport" content="width=1024"><link rel=\'icon\'
-    href="http://www.redditstatic.com/icon.png" sizes="256x256" type="image/png" /><
-    link rel=\'shortcut icon\'href="http://www.redditstatic.com/favicon.ico" type="i
-    mage/x-icon" /><link rel=\'apple-touch-icon-precomposed\'href="http://'
+'HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\nx-frame-options: S
+AMEORIGIN\r\nx-content-type-options: nosniff\r\nx-xss-protection: 1; mode=block\
+r\nServer: \'; DROP TABLE servertypes; --\r\nVary: accept-encoding\r\nDate: Fri,
+ 23 May 2014 05:05:41 GMT\r\nTransfer-Encoding:  chunked\r\nConnection: keep-ali
+ve\r\nConnection: Transfer-Encoding\r\n\r\n00006000\r\n<!doctype html><html xmln
+s="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>reddit: th
+e front page of the internet</title><meta name="keywords" content=" reddit, redd
+it.com, vote, comment, submit " /><meta name="description" content="reddit: the
+front page of the internet" /><meta http-equiv="Content-Type" content="text/html
+; charset=UTF-8" /><meta name="viewport" content="width=1024"><link rel=\'icon\'
+href="http://www.redditstatic.com/icon.png" sizes="256x256" type="image/png" /><
+link rel=\'shortcut icon\'href="http://www.redditstatic.com/favicon.ico" type="i
+mage/x-icon" /><link rel=\'apple-touch-icon-precomposed\'href="http://'
+{{< / highlight >}}
 
 Great! We got something back. If we keep receiving more bytes, we'll find more and more.
 
-    data = ''
-    while True:
-        d = s.recv(1000)
-        if not d:
-            break
-        data += d
+{{< highlight python >}}
+data = ''
+while True:
+    d = s.recv(1000)
+    if not d:
+        break
+    data += d
+{{< / highlight >}}
 
 Now we've got a bunch of bytes back from reddit.com. They look kind of like
 what you see if you right click the front page of reddit and click "View Page
