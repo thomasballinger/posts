@@ -6,13 +6,13 @@ url: /2016/
 
 <style>
 li img {
-  width: 628px;
+  width: 100%;
 }
 img {
-  width: 628px;
+  width: 100%;
 }
 video {
-  width: 628px;
+  width: 100%;
 }
 ul {
   list-style: none;
