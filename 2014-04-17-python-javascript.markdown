@@ -90,7 +90,7 @@ several folks at [Hacker School](https://www.hackerschool.com/) for help.
     keyword.
 
 [^object]: This is the biggest lie in the post. If you swallow it, you'll be
-    alright with the other ones.
+    all right with the other ones.
     If this assertion offends you terrifically, you probably won't like this post.
     (or perhaps you'll enjoy nitpicking it :)
     If you can kind of see how that could be true, since most primitive types get

@@ -10,12 +10,11 @@ MC’d the Python trivia night as he has done for the past three years.
 [2015](http://rhodesmill.org/brandon/2015/pycon-trivia-night/),
 [2016](http://rhodesmill.org/brandon/2016/pycon-trivia-night/))
 
-This year for some reason (maybe because I see him at work?) Brandon asked me to help out with the trivia night. Along with Larry Hastings, each of the three of us wrote eight trivia questions. This post is a draft of what will soon appear on Brandon’s blog in his annual Python Trivia night report.
+This year for some reason (maybe because I see him [at
+work](https://blogs.dropbox.com/tech/)) Brandon asked me to help out with the
+trivia night. Along with Larry Hastings, each of the three of us wrote eight
+trivia questions.  I wrote questions for the second section of trivia of night.
 
----
-
-I wrote questions for the second section of trivia of night, presenting what
-may be the first PyCon trivia questions every not to be written by Brandon!
 I tried to come up with questions I imagined might incite discussion and participation,
 but still reward folks who had been using Python for many years.
 
@@ -140,7 +139,10 @@ What’s the longest Python keyword?
 It’s a tie between “continue” and “nonlocal.” I hoped this would be a fun, if easy question, because it’s the kind of thing no one knows off the top of their head. Not a single team missed this question, but I hope it was fun to brainstorm keywords.
 
 # Question 5
-Given a class “A” with a method “b” and an instance “a”, what is the type of: (in Python 2 or 3) * a.b * A.b
+Given a class “A” with a method “b” and an instance “a”, what is the type of: (in Python 2 or 3) 
+
+* `a.b`
+* `A.b`
 
 This question come almost directly from
 [the talk](http://ballingt.com/surprising-python)
@@ -194,7 +196,7 @@ because this is what the types are actually called. But in the types module most
 I ended up accepting both.
 
 # Question 7
-In addition to modules, keywords, and builtins, typing “help()” in the interactive intepreter lets you ask about topics! Some examples: ASSERTION ASSIGNMENT ATTRIBUTES
+In addition to modules, keywords, and builtins, typing `help()` in the interactive intepreter lets you ask about topics! Some examples: ASSERTION ASSIGNMENT ATTRIBUTES
 
 Name three more of these topics.
 

@@ -1,6 +1,6 @@
 ---
 date: 2017-01-09T08:00:00Z
-title: On from the Recurse Center, a break, and Dropbox
+title: From the Recurse Center to Dropbox
 url: /2016/
 ---
 
@@ -21,8 +21,8 @@ ul {
 </style>
 
 
-Last September I left [the Recurse Center](https://www.recurse.com/), f.k.a. Hacker School.
-Three and a half wonderful years there shaped me as programmer, an educator,
+Last September I finally moved on from [the Recurse Center](https://www.recurse.com/), f.k.a. Hacker School.
+Three and a half wonderful years there shaped me as a programmer, an educator,
 a contributing community member and above all as a learner.
 
 There's so much to say about the Recurse Center that I have trouble saying anything at all.
@@ -130,7 +130,7 @@ Boston Python Users Group.
 
 ![](/assets/tripphotos/newnew08.jpg)
 
-I ate this sandwich in London which had applesauce on it, it was really good.
+I ate this sandwich in London. It had applesauce on it and was really good.
 
 I became a certified Software Carpentry instructor this year.
 Interactively teaching many dozens of students continues to be something
@@ -147,10 +147,10 @@ This fall I started interviewing with companies. It was interesting to finally
 see firsthand what interviews were like. I spent a lot of time at the Recurse
 Center helping RCers prepare for interviews if interviewing was something that
 there were nervous about. Sometimes I debriefed them after interviews to assess
-the value of this preparation, but actually being present was much better.
+the value of this preparation, but actually being interviewed was much better.
 
 Over three trips out west (many thanks to very patient and hospitable friends
-for housing me), the most fun interview by far was working with Amjad and Haya of
+for housing me!), the most fun interview by far was working with Amjad and Haya of
 [repl.it](https://repl.it). I spent three days with them helping implement
 a [Python debugger](https://repl.it/site/blog/python-debugger) for their
 online REPL/IDE product. At every company at which I interviewed, I was impressed
