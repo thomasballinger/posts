@@ -294,7 +294,7 @@ attribute lookup logic in `ceval.c`
 with a reference to the object that the attribute lookup started on so
 it can be used to create our bound method.
 
-Functions are implement this descriptor protocol it turns out!
+It turns out that functions implement this descriptor protocol!
 Take a look at the `__get__` method on a function:
 
 {{< highlight python >}}
