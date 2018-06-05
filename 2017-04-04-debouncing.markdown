@@ -113,7 +113,7 @@ solution than the one I found!
 
 ---
 
-Often before I the answer back, I make enough progress to come up with a new question!
+Often before I get the answer back, I make enough progress to come up with a new question!
 
 <div class="asking-questions-queued-up"></div>
 
@@ -144,7 +144,7 @@ if I come up with another more relevant one.
 <div class="asking-questions-debouncing"></div>
 
 For a single dedicated question-answerer that won't stop what they're doing
-do answer a new question, this might get me the answer to my
+to answer a new question, this might get me the answer to my
 latest question more quickly on average, despite this added self-imposed
 delay.
 

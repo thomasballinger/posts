@@ -1,5 +1,5 @@
 ---
-date: 2018-01-16T19:00:00Z
+date: 2018-04-06T19:00:00Z
 title: "Python is not Java or C++: Python as a second language empathy"
 url: /python-second-language-empathy/
 ---
@@ -13,7 +13,9 @@ ul {
 }
 </style>
 
-[video](https://www.youtube.com/watch?v=kWNBK2cnaYE)
+[abstract](https://www.pycascades.com/talks/python-is-not-java-or-c/)
+
+{{< youtube id="kWNBK2cnaYE" >}}
 
 ---
 
