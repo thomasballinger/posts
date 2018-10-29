@@ -12,8 +12,9 @@ A couple of tweet threads from Sarah Drasner caught my eye today:
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">After a few hours of this tweet going and some interesting discussion in the thread, I think my opinion on this has swayed <a href="https://t.co/1z1z5EJyNf">https://t.co/1z1z5EJyNf</a></p>&mdash; Sarah Drasner (@sarah_edo) <a href="https://twitter.com/sarah_edo/status/855934231582789632">April 22, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-I agree. And though I value highly folks doing and collecting Real Research like [Mark
-Guzdial](https://computinged.wordpress.com/)
+I agree: teach intro programming in JavaScript.
+Although I value folks doing and collecting Real Research like [Mark
+Guzdial](https://computinged.wordpress.com/),
 [Mel Chua](http://blog.melchua.com/), and [Phillip
 Guo](https://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-u-s-universities/fulltext)
 on this and other computing education issues,
@@ -37,11 +38,11 @@ teacher knew and had books on, and gives cool visual feedback.[^yup]
 
 The right language to teach is also the one you know, and is useful in your
 department, school, field, industry, etc. This is really targeted toward
-making an institutional decision, not telling you what you about your
+making an institutional decision not telling you about your
 circumstances.
 
 Another great Twitter thread I saw today was April Wensel gathering many
-people's journeys through programming languages, teed of by this:
+people's journeys through programming languages, teed off by this:
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Your first programming language may impact the route you take through the concepts, but it never limits your future learning. 🤷🏻</p>&mdash; April Wensel (@aprilwensel) <a href="https://twitter.com/aprilwensel/status/855824635123728384">April 22, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -72,7 +73,8 @@ all use: the web browser.
 
 You already have an IDE for JavaScript installed, and you mostly know how to use it because
 you spend 6 hours a day in it already. In a few lines you can accomplish real
-tasks people care about like selecting the ads on a page and hiding them.
+tasks people care about like selecting the ads on a page and hiding them, or [gender-swapping
+the pronouns on a page](http://www.daniellesucher.com/2011/11/11/jailbreak-the-patriarchy-my-first-chrome-extension//).
 Without installing anything, or even having to think about the idea of a
 library or module, you can start playing with image processing, drawing shapes
 or doing pixel-wise operations. And most importantly, in an environment with
@@ -106,7 +108,7 @@ means smartphone apps and websites. Start there!
 Finally: yes, there are more things to learn than JavaScript can teach.
 But the goal of a first programming class has to be to hook the students
 and to give them the power to scratch their own itches. Let the experienced
-programmers test out and get right to their beautiful Hindley Milner or
+programmers test out of the class and get right to their beautiful Hindley Milner or
 lucrative programming interview prep. A first programming class has to
 get students programming, which takes time and fortitude, which require
 caring for some reason. For those students who didn't have the head start of
