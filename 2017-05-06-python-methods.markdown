@@ -199,8 +199,7 @@ of a special, written-in-C, optimized version of this.
 
 So that's what's going on: Python is
 creating a method object that takes one less argument (and now holds a reference to the
-instance from which we got it) from our
-our original Python function.
+instance from which we got it) from our original Python function.
 
 So method binding lets us write what could have been the clunky
 
