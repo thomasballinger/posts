@@ -13,7 +13,7 @@ ul {
 }
 </style>
 
-[abstract](https://www.pycascades.com/talks/python-is-not-java-or-c/)
+[abstract](https://www.2018.pycascades.com/talks/python-is-not-java-or-c/)
 
 {{< youtube id="kWNBK2cnaYE" >}}
 
@@ -25,7 +25,7 @@ It's different! Let's talk about how.
 
 # Why?
 
-Because as Python experts (you did choose to come to a Python conference so likely you're either an expert already or in time you're going to be come one if you keep going to Python conferences) we have a responsibility to help our colleagues and collaborators who don't know Python as well we do. The part of that responsibility I want to focus on today is when other people have experience with other programming languages but are new to Python.
+Because as Python experts (you did choose to come to a Python conference so likely you're either an expert already or in time you're going to become one if you keep going to Python conferences) we have a responsibility to help our colleagues and collaborators who don't know Python as well we do. The part of that responsibility I want to focus on today is when other people have experience with other programming languages but are new to Python.
 
 I work at Dropbox, which as Guido said earlier today is a company that uses a fair bit of Python. But a lot of programmers come to Dropbox without having significant Python experience.  Do these people take a few months off when they join to really focus on learning and figure out exactly how Python works, having a lot of fun while they do it? That would great (*briefly shows slide of Recurse Center logo*) but that's not what usually happens. Instead they learn on the job, they start making progress right away. They'll read some books (my favorite is [Python Essential Reference](http://www.dabeaz.com/per.html), but I hear [Fluent Python](http://shop.oreilly.com/product/0636920032519.do) is terrific), watch some [Python talks](https://www.youtube.com/c/PyCascades), read some [blog posts](https://nedbatchelder.com/), ask questions at work, and Google a lot. That last one is the main one, lots of Google and lots of Stack Overflow.
 
