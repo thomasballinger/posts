@@ -139,8 +139,8 @@ the move.
 
 An example of different behavior requiring a cursor check to detect:
 
-<img src="assets/vertical-resize-iterm.gif" alt="" style="width: 100%"/>
-<img src="assets/vertical-resize-terminalapp.gif" alt="" style="width: 100%"/>
+<img src="/assets/vertical-resize-iterm.gif" alt="" style="width: 100%"/>
+<img src="/assets/vertical-resize-terminalapp.gif" alt="" style="width: 100%"/>
 
 Changing window width on terminal emulators that wrap text is trickier,
 particularly while text from a previous program remains visible, since
@@ -170,7 +170,7 @@ def test_wrapped_undo_after_narrow(self):
     """)
 {{< /highlight >}}
 
-<img src="assets/tmuxtests.gif" alt="" style="width: 100%"/>
+<img src="/assets/tmuxtests.gif" alt="" style="width: 100%"/>
 
 It would be great if there were a really solid implementation of this approach, but it
 alone might not be worth the effort. Users of command line interfaces are
