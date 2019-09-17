@@ -82,7 +82,6 @@ The comments sections of [this LiveJournal post](https://trapezzoid.livejournal.
 </a>
 
 {{< tweet 864546749523910659 >}}
-{{< tweet 679624805763670016 >}}
 {{< tweet 528791584486457344 >}}
 {{< tweet 431500646995726336 >}}
 {{< tweet 872822703610359809 >}}
