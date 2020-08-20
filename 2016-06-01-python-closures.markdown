@@ -504,7 +504,7 @@ unheard of.
 >>> me.age
 Traceback (most recent call last):
   File "<input>", line 1, in <module>
-AttributeError: 'Problem' object has no attribute 'age'
+AttributeError: 'Person' object has no attribute 'age'
 {{< / highlight >}}
 
 The above code hides data in local variables of a constructor function
