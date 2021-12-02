@@ -5,7 +5,7 @@ title: Remember to use invalidate_caches() in Python 3
 url: /import-invalidate-caches/
 ---
 
-{{< tweet 679016654651703296 >}}
+{{< tweet user="ballingt" id="679016654651703296" >}}
 
 I was getting intermittent failures of a
 test that checked that a feature of

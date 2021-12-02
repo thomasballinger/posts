@@ -81,9 +81,9 @@ The comments sections of [this LiveJournal post](https://trapezzoid.livejournal.
 <img src="/assets/abba8.png" style="width:100%;"/>
 </a>
 
-{{< tweet 864546749523910659 >}}
-{{< tweet 528791584486457344 >}}
-{{< tweet 872822703610359809 >}}
+{{< tweet user="Kavmeister" id="864546749523910659" >}}
+{{< tweet user="jerrykuch" id="528791584486457344" >}}
+{{< tweet user="nimasmi" id="872822703610359809" >}}
 
 # So what?
 
