@@ -30,7 +30,7 @@ If the new implementation is useful enough and has a level of compatibility with
 
 This "Optimizable Python" or "Restricted Python" or "Fast Python" or "Static Python" or "Boring Python," subset could, once agreed upon, have its semantics shadowed in CPython in an optional mode.
 
-What might be up for debate? A few suggestions from [Lucasz's talk](https://youtu.be/KDXhu4rxTNY?t=1168):
+What might be up for debate? A few suggestions from [Łukasz's talk](https://youtu.be/KDXhu4rxTNY?t=1168):
 
 * eval / exec (compiled in an environment that doesn't allow setting regions as executable, like iOS or (perhaps? I haven't looked) the webassembly spec.
 * the complexities and dynamism of the import system.
