@@ -1,0 +1,49 @@
+---
+date: 2019-12-26T23:00:00Z
+title: 2019
+url: /2019
+---
+
+<style>
+img {
+  width: 100%;
+}
+</style>
+
+# This Year
+
+New biking destinations!
+* China Camp, great for first time biking campers, bike path almost the whole way, <30mi
+* Pinehurst Road around Redwood Regional Park from Berkeley, great forest!
+
+![](/assets/bikeroute.png)
+
+[Reading](http://ballingt.com/books/): lots of scifi! I had a great reading summer.
+
+Traveled to Serbia and Argentina!
+
+![](/assets/argentina.jpg)
+
+Work: I joined a data engineering team at Dropbox for a while, which was a good fit for expanding the scope of some work I was had already been doing, instrumenting desktop client and web interfaces to gather signals for ML models. 
+Then in October I jumped to a new thing, [Observable](https://observablehq.com/)!
+
+Between jobs I [gave my first keynote](https://twitter.com/ballingt/status/1180017042528882688?s=20) in Serbia!
+I talked about how I imagine a new dialect of Python might emerge.
+Since then a project to help free Python implementations from needing to implement the CPython C API [has been announced](https://openteams.com/initiatives/2) and I've [gotten interested in WebAssembly](https://observablehq.com/collection/@ballingt/advent-of-wasm), which I think will be an important future compilation target for Python.
+
+I interviewed at just two companies this job search, the other being [Preset](https://preset.io/), which I'm also pretty excited about.
+
+I taught 4 sessions at [Bradfield School of Computer Science](https://bradfieldcs.com/), teaching Computer Architecture twice and Programming Languages twice.
+A lot of the fun programming I did this year was motivated by these classes,
+like [compiling a language to the CPython bytecode VM](https://repl.it/@thomasballinger2/compilecalctopython-1).
+Oz has announced he's [moving Bradfield courses online](https://blog.bradfieldcs.com/moving-online-635f6526ef90).
+
+I led [one Software Carpentry workshop](https://erinbecker.github.io/2019-05-01-genentech/) at Genentech.
+
+I used [Twitter](https://twitter.com/ballingt) a lot this year.
+
+I got a standing desk for my room and I started cooking more in September. (No more free Dropbox meals!)
+
+I played very few [video games](http://ballingt.com/games/) this year, but my long list of games I want to play someday makes me happy.
+
+And now I'm having a relaxing end of the year – you can tell because I'm finally writing a blog post :)
