@@ -12,15 +12,15 @@ Why wouldn't the distribution package be identical to the source package? JavaSc
 1. The code may be written in a language not consumable by targeted platforms. Typically TypeScript files needs to be compiled to JavaScript files (and source map files, and types files, and types declaration files).
 1. For the code to be consumable by every tool you target (older versions of Node.js, Bun, Deno; browser script tags; bundlers like Webpack, Vite, Rollup; and other tools like TypeScript, tsx, vitest, and jest --- and for each of these, two formats: ESM and CJS) you often need multiple copies of the code.
 
-   These target platforms may have different module resolution algorithms, different ways of finding the right code when you `import { something } from "your-package";` so you need to make sure the code is where these tools will look for it. Naturally there are tools for producing these various layouts of code. My new favorite is [tshy](https://github.com/isaacs/tshy).[^tshy]
+   These target platforms may have slightly different module resolution algorithms, different ways of finding the right code when you `import { something } from "your-package";` so you need to make sure the code is where these tools will look for it. Naturally there are tools for producing these various layouts of code. My new favorite is [tshy](https://github.com/isaacs/tshy).[^tshy]
 
-Additionaly some filesystem contents not present in the repo like the node_modules directory are also typically also not included in the distribution package.
+Additionaly some filesystem contents not present in the repo like the node_modules directory are also not typically included in the distribution package.
 
 Many [simple](https://github.com/thlorenz/find-parent-dir) JavaScript packages either write their code in a way that requires no compilation or commit the build artifacts to source control so there are no differences between the source and distribution packages, or so their distribution packages are strict subsets of their source packages.
 
 Technically you can produce this distribution artifact any way you like: your source code could be a Python script that generates a tarball with the proper file layout!
 
-But there is a strong ecosystem convention that a source package contain a package.json file at its root with metadata used for all kinds of things: what dependencies to install, the package name, and configuration for tools. Most of this metadata is for npm or other packages managers, but other tools rely on this metadata or store their own configuration here.
+But there is a strong ecosystem convention that a source package contains a package.json file at its root with metadata used for all kinds of things during package development: what dev dependencies to install, the package name, and configuration for tools. Most of this metadata is for npm or other packages managers, but other tools rely on this metadata or store their own configuration here.
 There are some weaker ecosystem conventions like a `dist/` directory which contains git-ignored build artifacts and a `src/` directory which contains the source code that will be built.
 
 Since tools like test runners and linters and npm commands like `npm link` have their own requirements for file layout that overlap with the distribution package requirements, source and distribution packages partially overlap.
@@ -72,13 +72,15 @@ svg {
 One persnickety group of platforms you may choose to target use old module resolution algorithms that don't understand the `"exports"` field of a package.json. `"exports"` specifies the location of code based on the path imported from your library.
 When this mapping is trivial (when there's only one code file to load) this isn't necessary but it is when you have multiple entry points.
 
-Multiple entry points are a neat idea: install a single package like `convex` to be able to import multiple pieces of code. `import { query } from "convex/server";` comes from a completely separate codebase (importing different dependencies and with different platform requirements) as `import { ConvexClient } from "convex/browser";` but both imports are enabled by `npm install convex`. Without relying on bundler code extraction you can be certain that the portion of the codebase not imported from will not end up in the bundled code. For targets that don't tree shake like Node.js, you still know code from a different entry point than the one you imported will absolutely not run.
+Multiple entry points are a neat idea: install a single package like `convex` to be able to import multiple pieces of code. `import { query } from "convex/server";` comes from a completely separate codebase (importing different dependencies and with different platform requirements) as `import { ConvexClient } from "convex/browser";` but both imports are enabled by `npm install convex`. Without relying on bundler code extraction you can be certain that the portion of the codebase not imported from will not end up in the bundled code. For targets that don't tree shake like Node.js, you still know code not imported from this entry point will absolutely not run.
 
-# Are you going to get to the story?
+But they're not _just_ a neat idea: they're nearly required to maintain encapsulation. Before `"exports"` any file in a package could be imported by a consumer making it difficult to enforce a public interface. And using export conditions you can further direct various package consumers to the compiled artifact just right for them.
+
+# How do we do it
 
 I didn't know much about this until about two years ago when I started to maintain npm packages for [Convex](https://www.convex.dev/), primarily the [convex](https://www.npmjs.com/package/convex) package. ([source](https://github.com/get-convex/convex-js))
 
-We decided to support multiple entry points for platforms like Metro and older versions of Jest and Vitest that use something like Node.js v10 resolution, ignoring the entry point mapping `"export"` field of the package.json. To imitate support for multiple entry points it's necessary for the built JavaScript files to be located relative to the package root according to their entry point name: `convex/server` will refer to
+I decided to use multiple entry points and soon realized we needed them to work for platforms like Metro and older versions of Jest and Vitest that use something like Node.js v10 resolution, ignoring the entry point mapping `"exports"` field of the package.json. To imitate support for multiple entry points it's necessary for the built JavaScript files to be located relative to the package root according to their entry point name: `convex/server` will refer to
 
 - a JavaScript file in the package root called server.js,
 - a file called server/index.js,
@@ -92,7 +94,7 @@ There are three things we could do with these ugly stub directories like server/
 2. generate them during a build process and adding them to the .gitignore file
 3. just stick them in the tarball artifact so no one ever sees them
 
-For the convex npm package I went with 1), so the convex npm package has directories called `browser`, `values`, `server` etc. [in version control](https://github.com/get-convex/convex-js) as well [in the distribution package](https://unpkg.com/browse/convex@1.13.0/). These files being present during step 2) means tools like `npm link` or pnpm monorepos that install dependencies by linking directly to packages instead of installing the tarball also benefit from the presence of these files. In our monorepo we have tools that use these legacy module resolution strategies we have to appease. It's possible to force these package to install the tarball instead in a pnpm monorepo by installing `file:../path/to/package?pack` instead of the normal path, so option 3) is actually viable for us.
+For the convex npm package I went with 1), so the convex npm package has directories called `browser`, `values`, `server` etc. [in version control](https://github.com/get-convex/convex-js) as well [in the distribution package](https://unpkg.com/browse/convex@1.13.0/). These files being present during step 2) means tools like `npm link` or pnpm monorepos that install dependencies by linking directly to packages instead of installing the tarball also benefit from the presence of these files. In our monorepo we have at times has tools that used these legacy module resolution strategies we have to appease. And even if we fixed these we have demos projects that do this on purpose to recreate issues that customers have reported. It's possible to force these package to install the tarball instead in a pnpm monorepo by installing `file:../path/to/package?pack` instead of the normal path, so option 3) is actually viable for us too.
 
 And it's not much more work given that we already have a script that
 unpacks the tarball to a temporary directory, modifies it, and repacks it. ([script](https://github.com/get-convex/convex-js/blob/main/scripts/postpack.mjs))
@@ -108,14 +110,14 @@ If the original package.json points to files in the dist folder as usual then th
 
 I've never traced through to figure out quite how the [Next.js project](https://github.com/vercel/next.js) produces its [distribution package](https://www.npmjs.com/package/next) but since I couldn't follow assumed something like this was happening, and I've envied this setup ever since.
 
-# What's the big idea?
+# Why are you writing this?
 
-The investigation into this technique was all done by a colleague who asked for feedback on it, but while giving it I found I was lacking a good description of the problem. Now you too can read it!
+The investigation into this technique was all done by a colleague who asked for feedback on it, but while giving it I found I was lacking a good description of the problem. So I wrote a blog post, now you can read it too!
 
-I worry about breaking from ecosystem conventions because I don't want an unusual build process or directory structure to break tools I use but don't fully understand or make it difficult to use new tools in the future.
+I worry about breaking from ecosystem conventions because I don't want an unusual build process or directory structure to break tools I use but don't fully understand, or make it difficult to use new tools in the future.
 
 I'm the type to wait a full year before upgrading my laptop to the next MacOS release because I want to lean on others' efforts to update Homebrew.
-I don't want my setup to stick out; I want to be able to Google for solutions that early adopters posted 6 months ago. Another valid approach is to fuck around and find out; I've just gotten tired of finding out.
+I don't want my setup to stick out; I want to be able to Google for solutions that early adopters posted 6 months ago. Another valid approach is to fuck around and find out. I've just gotten tired of finding out.
 
 The trick to hacking underspecified tooling processes is accounting for all the third party tools that might use metadata in package.json for anything. For instance I worry about communicating the correspondence of the source package and the distribution package directories to a build tool trying to walk dependencies to build a minimal build tree.
 
@@ -123,4 +125,7 @@ So I'm more comfortable following conventions here, but I like the synthetic pac
 
 [^tshy]:
     I recently [requested support](https://github.com/isaacs/tshy/issues/85) for the stub directory technique for supporting Node 10 module resolution of multiple entry points in [tshy](https://github.com/isaacs/tshy/)
-    and the maintainer had reasons not to implement it: 1. tshy is a tool for TypeScript HYbridization, not a general purpose solves-everything package publishing. Use it for generating multiple versions of a package. And 2. in addition to the above, do you really need to support these platforms? Our customers say we do, so for now we'll take on this pain. I'm sympathetic to the point of view that this just delays adoption of modern ways of doing things but I also hear from developers that are sad when something doesn't work and then happy when it does; it's hard for me to prioritize the ecosystem over the pain of the developer in front of me.
+    and the maintainer had good reasons not to implement it: tshy is a tool for TypeScript HYbridization, not a general purpose solves-everything package publishing. Use it for generating multiple versions of a package, for ESM and CJS. And do you really need to support these platforms?
+
+    I'm sympathetic to the point of view that this just delays adoption of modern ways of doing things
+    but my incentives as a (paid! this is my job!) advocate for a tool align with my desire to help the developers who don't fully understand their tools (just like I've admitted to above) but want something to just work. Since we've heard customers ask for support we're taking on this pain.
