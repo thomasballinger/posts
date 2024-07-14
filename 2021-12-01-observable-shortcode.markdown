@@ -1,5 +1,5 @@
 ---
-date: 2021-12-01T23:00:00Z
+date: 2021-12-01T12:00:00Z
 title: Observable Hugo Shortcode
 url: /observable-hugo-shortcode
 ---
@@ -32,17 +32,18 @@ Here's the code to stick in the file layouts/shortcodes/obs.html.
   end }}"></iframe>
 <script>
 (function() {
-  const scripts = document.querySelectorAll('script');
-  const iframe = scripts[scripts.length - 1].previousElementSibling;
-  window.addEventListener("message", (e) => {
-    if (e.origin === 'https://observablehq.com' &&
-        e.source === iframe.contentWindow) {
-      const msg = JSON.parse(e.data)
-      if (msg.context === 'iframe.resize') {
-        iframe.height = msg.height;
-      }
-    }
-  });
+ let s = document.querySelectorAll('script');
+ let script = s[s.length - 1];
+ let iframe = script.previousElementSibling;
+ window.addEventListener("message", (e) => {
+  if (e.origin === 'https://observablehq.com'
+      && e.source === iframe.contentWindow) {
+   const msg = JSON.parse(e.data)
+   if (msg.context === 'iframe.resize') {
+    iframe.height = msg.height;
+   }
+  }
+ });
 })();
 </script>
 ```
