@@ -1,0 +1,47 @@
+---
+date: 2021-12-01T23:00:00Z
+title: Recently
+url: /april-2022
+draft: true
+---
+
+I've been in Maine for all of April and it's been my favorite time to be here so far. Have done some granite hiking,
+
+# Work
+
+I've been doing work for [Convex](https://www.convex.dev/) for a few months now. When I started I just wanted to help some friends out and figured I'd work for 20 hours a week or less, but it's been fun work on a fun team and I've been averaging higher. Convex made a few announcements this week, the standout event to me was seeing [Lee Robinson](https://www.youtube.com/channel/UCZMli3czZnd1uoc1ShTouQw) talk about Convex with Sujay.
+
+There's a lot going on in web development, there's a lot involved in making tech choices, and it's hard to decide how much to follow it all. But Lee has a lot of good stuff.
+
+I talked to a friend about contracting recently.
+
+I've started playing a bit with Svelte. I don't have much to say about it, it's nice like everyone says it is. The choice to use recognizable JavaScript syntax seems interesting, a bootstrapping measure to allow JavaScript syntax highlighters to work. At Observable, maintaining compatibility with JavaScript was limiting.
+
+# [Have you tried rubbing a database on it](https://www.hytradboi.com/)
+
+It's too early, I haven't watched most of the talks!
+
+### Ziplib
+
+I got to hang out with JP and for a day in March, we started implementing in Zaplib, a fork of Makepad with a lot of interesting changes mostly made by JP.
+
+# Other people's things
+
+- [Placemeark](https://www.placemark.io/) launch
+
+- Mary Rose Cook keeps writing about prototyping
+
+# Stuff I'm not doing
+
+- I haven't followed up with the interns I hired to contribute to an open source game over winter break.
+
+- I worked with a new contributor to bpython on type annotations, Sebastian continues to the a responsible maintainer who keeps the project (including [some code I wrote 8 years ago](https://ballingt.com/bpython-curtsies-release/) and now regret parts of) going.
+
+- I haven't been running much! That's probably fine.
+
+- I'm thinking about getting back to some or even some emscripten work. Getting occasional mentions in a community Discord and GitHub repo is enough to make me want to write more. I check in occasionally with teams doing interesting work here.
+
+---
+
+I thought I'd copy [Tom MacWright's](https://macwright.com/) Recently format to do some retrospection.
+I was most charmed by those posts before I realized they happend once a month, so maybe I'm not actually following that pattern.
