@@ -11,16 +11,16 @@ In Python we have functions and methods.
 Function definitions in Python look like this:
 
 {{< highlight python >}}
-def sloganify(x):
-    return "{} or bust!".format(x)
+    def sloganify(x):
+        return "{} or bust!".format(x)
 {{< / highlight >}}
 
 And method definitions look like this:
 
 {{< highlight python >}}
-class Person:
-    def sloganize(self, x):
-        return "{} or bust!".format(x)
+    class Person:
+        def sloganize(self, x):
+            return "{} or bust!".format(x)
 {{< / highlight >}}
 
 # Classes are buckets of functions
@@ -31,23 +31,23 @@ statements which contain function definitions.
 Class statements look like this:
 
 {{< highlight python >}}
-class Person:
-   greeting = 'hello'
-   x = 4 + 3
+    class Person:
+       greeting = 'hello'
+       x = 4 + 3
 {{< / highlight >}}
 
 which is syntactic sugar for something like this:
 
 {{< highlight python >}}
-Person = type("Person", (), {'greeting': 'hello', 'x': 4 + 3})
+    Person = type("Person", (), {'greeting': 'hello', 'x': 4 + 3})
 {{< / highlight >}}
 
 So writing a class with a method
 
 {{< highlight python >}}
-class Foo:
-    def bar(x, y, z):
-        return 7
+    class Foo:
+        def bar(x, y, z):
+            return 7
 {{< / highlight >}}
 
 is about the same as writing
