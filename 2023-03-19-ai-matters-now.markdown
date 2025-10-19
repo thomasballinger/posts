@@ -65,7 +65,7 @@ No, that's not it. I was still mostly ignoring this when that's all I knew about
 
 For a while you've been able to ask an LLM to do math for you and watch it fail:
 
-![bad math](/chat-gpt-bad-math.png)
+![bad math](/assets/chat-gpt-bad-math.png)
 
 WRONG! The answer is 19237912608, that's .05% off! I know that because I Googled it.
 
